@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projects</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+        <meta name="description" content="Summary of all my Github and Media projects.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=REM:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <base href="" target="_blank">
+    </head>
+    <header>
+        <div class="header">
+            <h1>Kevin Hu</h1>
+            <h1 style="font-size:large;">Summary of Projects</h1>
+            <div class="navbar">
+                <a class="current" href="github.html" target="_self">Github</a>
+                <a href="/" target="_self">Homelab</a>
+                <a href="production.html" target="_self">Media Production</a>
+            </div> 
+        </div>
+    </header>
+    <body >
+        <div class="content-wrapper">
+        <p>Here are the collection of various hosted on GitHub. These projects showcase my skills in scripting, self-hosting, content-management and more. Feel free to explore and check out the repositories for more details.</p>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>Personal Notes and Documentation</h2>
+                <h2 class="date">Ongoing</h2>
+            </div>
+            <h3>Content Management/Static Site Generator</h3>
+            <p>I use <a href="https://obsidian.md">Obsidian</a> for note-taking, including homelab documentation. Previously, I used <a href="https://bookstackapp.com">Bookstack</a>, but switched to Obsidian for better efficiency. I migrated my notes using Python scripts and configured <a href="https://mkdocs.org">mkdocs</a> to host them. To publish all my notes publicly with a nice design, I also use <a href="https://quartz.jzhao.xyz/">Quartz</a>.
+            <br><br>
+            In my documentation site, you can find my homelab documentation, which includes all the hardware and software I use in my homelab. The rest of my Obsidian notes include my study notes and project notes related to my programming and selfhosting journey.
+            <br><br>
+            My documentation site <a href="https://vttc08.github.io/infra-docs">https://vttc08.github.io/infra-docs</a><br>
+            My Obsidian Notes <a href="https://vttc08.github.io/obsidian-notes">https://vttc08.github.io/obsidian-notes</a>
+            </p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/obsidian-notes"></div>
+                <div class="repo-card repo" data-repo="vttc08/obsidian-notes"></div>
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/infra-docs"></div>
+                <div class="repo-card repo" data-repo="vttc08/infra-docs"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>Movie Renamer</h2>
+                <h2 class="date">Ongoing</h2>
+            </div>
+            <h3>Python/Bash Utility Script</h3>
+            <p>To organize my movies and add Chinese subtitles for my parents, I wrote Python scripts to rename subtitle files according to specific rules. I manage my movies in <a href="https://docs.linuxserver.io/images/docker-webtop/">Webtop</a>, an isolated environment. To avoid installing many dependencies, I also use bash scripts for file operations and to call the <a href="https://doc.solivetin.app">Oliver Tin</a> API or using an interactive SSH shell. These scripts evolve over time to add support for multiple disks and features like subtitle extraction, UTF fix, and ad removal.</p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/movie-renamer"></div>
+                <div class="repo-card repo" data-repo="vttc08/movie-renamer"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>Customized Docker Container for GUI Apps</h2>
+                <h2 class="date">Ongoing</h2>
+            </div>
+            <h3>Dockerfile/Bash</h3>
+            <p>I use Docker extensively to deploy apps on my server. Sometime I need to run GUI apps, and others have not built them yet. I created a Dockerfile to build a custom Docker image based on <a href="https://github.com/jlesage/docker-baseimage-gui">jlesage's base image</a>. I also wrote bash scripts to initialize the container and manage the app's configuration along with Github Actions to automate the build process.</p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/docker-mcaselector"></div>
+                <div class="repo-card repo" data-repo="vttc08/docker-mcaselector"></div>
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/docker-losslesscut"></div>
+                <div class="repo-card repo" data-repo="vttc08/docker-losslesscut"></div>
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/docker-duckdns-dynu"></div>
+                <div class="repo-card repo" data-repo="vttc08/docker-duckdns-dynu"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>Fireshare Import</h2>
+                <h2 class="date">Aug 2024</h2>
+            </div>
+            <h3>Powershell Utility Script</h3>
+            <p><a href="https://github.com/ShaneIsrael/fireshare">Fireshare</a> is an app people can host their gaming clips and offers easy embed to social media platforms. However, the import features are limited. I wrote a Powershell script that can be run in a right click context menu to import clips from Fireshare to my server. This allows me to easily share any clips I recorded and have a link to share with friends.</p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/fireshare-import"></div>
+                <div class="repo-card repo" data-repo="vttc08/fireshare-import"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>SCI 201 - Effect of CPU C-States on Idle Power</h2>
+                <h2 class="date">May 2024</h2>
+            </div>
+            <h3>Statistics Research Project</h3>
+            <p>CPU C-states are states which a CPU can enter when its idling and the correct settings can reduce overall server's power consumption. I was interested in this subject to save power for my home server, so I took the opporunity in SCI 201, an university-level research course to perform the experiment to find out if the idle power consumption between 2 CPU C-states. I used a power meter, Home Assistant and InfluxDB for data collection and used data science Python tools pandas and matplot to summarize the data and at the end, written a formal report and a presentation.</p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/sci-201-cpu-c-states"></div>
+                <div class="repo-card repo" data-repo="vttc08/sci-201-cpu-c-states"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>ProPresenter Remote Control</h2>
+                <h2 class="date">April 2024</h2>
+            </div>
+            <h3>Python Flask Webapp</h3>
+            <p>Our church uses a locked down Mac Mini and we are limited to only using ProPresenter with limited configuration. The presenter need to control the slides. We've used wireless remotes in the past but many of these are unreliable due to range. ProPresenter does offer local remote control, but it's lacks some features and due to the locked down internet, we cannot use it. I created a basic Flask app that can preview, switch slides and control livestreaming; it does not have range limitations and it's stable. I've also used public-key based SSH tunneling to a public VPS to overcome the locked-down network and lack of admin limitation on the Mac Mini.</p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/propresenter-remote-control"></div>
+                <div class="repo-card repo" data-repo="vttc08/propresenter-remote-control"></div>
+            </div>
+        </div>
+        <hr>
+        </div>
+    </body>
+        
+</html>
