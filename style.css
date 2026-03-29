@@ -79,6 +79,17 @@ html {
   padding: 5px 20px;
 }
 
+h1 a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+
 .navbar {
   margin: 0 auto;
   max-width:fit-content;
@@ -99,12 +110,72 @@ html {
   justify-content: space-between;
 }
 
+.home-links {
+  margin: 6px 0;
+  align-items: baseline;
+}
+
+.home-links p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home-links p:first-child {
+  min-width: 140px;
+}
+
 .content-wrapper h2 {
   margin: 10px 20px 10px 0;
 }
 .content-wrapper h3 {
   margin: 0 0;
   font-size: 1.2rem;
+}
+
+.social-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 24px 0 10px;
+}
+
+.social-banner h2 {
+  margin: 0 0 6px;
+}
+
+.social-banner p {
+  margin: 0;
+  max-width: 80ch;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-button {
+  text-decoration: none;
+  font-family: "Geist Mono", sans-serif;
+  font-size: 1rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.social-button:hover {
+  background: rgba(127, 127, 127, 0.12);
 }
 
 p,h2,h3 {
@@ -152,6 +223,15 @@ h1 {
   }
   .content-wrapper h3 {
     margin: 10px 0;
+  }
+  .social-banner {
+    padding: 16px;
+  }
+  .social-links {
+    width: 100%;
+  }
+  .social-button {
+    flex: 1 1 140px;
   }
 }
 
