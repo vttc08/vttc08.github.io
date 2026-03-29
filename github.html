@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="description" content="Summary of all my Github and Media projects.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
+        <script src="./repo-card.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=REM:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,11 +14,12 @@
     </head>
     <header>
         <div class="header">
-            <h1>Kevin Hu</h1>
+            <h1><a href="/" target="_self">Kevin Hu</a></h1>
             <h1 style="font-size:large;">Summary of Projects</h1>
             <div class="navbar">
+                <a href="/" target="_self">Home</a>
                 <a class="current" href="github.html" target="_self">Github</a>
-                <a href="/" target="_self">Homelab</a>
+                <a href="homelab.html" target="_self">Homelab</a>
                 <a href="production.html" target="_self">Media Production</a>
             </div> 
         </div>
@@ -26,6 +27,22 @@
     <body >
         <div class="content-wrapper">
         <p>Here are the collection of various hosted on GitHub. These projects showcase my skills in scripting, self-hosting, content-management and more. Feel free to explore and check out the repositories for more details.</p>
+        <hr>
+        <div class="projects">
+            <div class="flex">
+                <h2>Insta-V2Ray</h2>
+                <h2 class="date">May 2025 - January 2026</h2>
+            </div>
+            <h3>Fullstack Python Flask Application</h3>
+            <p>While <a href="https://tailscale.com">Tailscale</a> is the solution for remotely accessing LAN devices, especially with CG-NAT. However, it uses Wireguard protocol which is trivial to get deep packet inspection (DPI) and its reliance on a central coorindation server (controlplane.tailscale.com) makes it trivial to get SNI blacklisted, rendering it useless. To counteract this, I switched to using <a href="https://www.v2ray.com/en/">V2Ray</a> with a customized setup tunneling over WebSockets, indistinguishable from regular web traffic. However, this setup requires the user to have port 443 forwarded, which unlike Tailscale, is not CG-NAT friendly.</p>
+            <p>Realizing this limitation, I wanted a solution that works with CG-NAT and accessible to everyone. So I began developing Insta-V2Ray. The concept works by using free tunnel provides (Cloudflare, Pinggy, Zrok) to establish a SSH or custom tunnel from your home network, and the tunnel providers hosts your V2Ray WebSocket server over HTTPS with a domain name which you can connect from anywhere, hence giving remote LAN access capability. The app runs the tunnel provider binary in a subprocess in a separate thread, allowing concurrent execution of multiple tunnels and monitor the logs to retrieve the public URL and build a customized V2Ray link with a subscription server.</p>
+            <p>I've used inheritance and polymorphism to create a flexible and maintainable codebase, allowing for easy addition of new tunnel provider. With my knowledge in networking, I've documented an extensive multi-lingual <a href="https://github.com/vttc08/insta-v2ray/wiki">wiki</a>, from setup, usage and troubleshooting. Later, I used APScheduler to implement tunnel keep-alive feature to automatically restart expired tunnels.</p>
+            <p>Due to inherent <a href="https://github.com/vttc08/insta-v2ray/wiki/RealityCheck">limitations</a> I've analyzed during development and my internet isn't CG-NAT, I do not regularly use this project. However, developing this has taught me <a href="https://github.com/vttc08/insta-v2ray/wiki/RealityCheck#what-does-it-go-from-now">valuable Python OOP concept</a> which I excel in my BCIT courses.</p>
+            <div class="grid">
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/insta-v2ray"></div>
+                <div class="repo-card repo" data-repo="vttc08/insta-v2ray"></div>
+            </div>
+        </div>
         <hr>
         <div class="projects">
             <div class="flex">
@@ -80,11 +97,11 @@
             In my documentation site, you can find my homelab documentation, which includes all the hardware and software I use in my homelab. The rest of my Obsidian notes include my study notes and project notes related to my programming and selfhosting journey.
             <br><br>
             My documentation site <a href="https://vttc08.github.io/infra-docs">https://vttc08.github.io/infra-docs</a><br>
-            My Obsidian Notes <a href="https://vttc08.github.io/obsidian-notes">https://vttc08.github.io/obsidian-notes</a>
+            My Obsidian Notes <a href="https://vttc08.github.io/obsidian-notes-v2">https://vttc08.github.io/obsidian-notes-v2</a>
             </p>
             <div class="grid">
-                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/obsidian-notes"></div>
-                <div class="repo-card repo" data-repo="vttc08/obsidian-notes"></div>
+                <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/obsidian-notes-v2"></div>
+                <div class="repo-card repo" data-repo="vttc08/obsidian-notes-v2"></div>
                 <div class="repo-card repo" data-theme="dark-theme" data-repo="vttc08/infra-docs"></div>
                 <div class="repo-card repo" data-repo="vttc08/infra-docs"></div>
             </div>
