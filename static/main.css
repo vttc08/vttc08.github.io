@@ -1,0 +1,13 @@
+/* Override the classless blog CSS with specific classes */
+
+@media (max-width: 576px) {
+  p,li,td,th {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin: 0.75rem 0;
+  }
+  .title {
+    font-size: 1.25rem;
+    margin: 0.75rem 0;
+  }
+}
