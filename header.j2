@@ -1,0 +1,34 @@
+<header class="site-header">
+  <div class="site-header-elements">
+    <a class="site-brand" href="/">&gt; Kevin Hu</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul>
+        <li>
+          <a
+            href="/"
+            {% if current_page == "home" %}aria-current="page"{% endif %}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/resume"
+            {% if current_page == "resume" %}aria-current="page"{% endif %}
+          >
+            Resume
+          </a>
+        </li>
+        <li>
+          <a
+            href="/posts"
+            {% if current_page == "posts" %}aria-current="page"{% endif %}
+          >
+            Posts
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
