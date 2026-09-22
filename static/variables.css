@@ -20,6 +20,7 @@
   --code: #235cb1;
   --preformatted: #2a2a2a;
   --marked: #e1e5f0e2;
+  --card-background: #e2e2e3;
 
   /* Note */
   --note-border: #4169e1;
@@ -50,5 +51,7 @@
     --note-background: #1b2638;
     --note-heading: #315082;
     --note-heading-text: var(--text);
+    /* Card */
+    --card-background: #20201f;
   }
 }

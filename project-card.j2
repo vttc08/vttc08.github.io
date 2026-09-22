@@ -1,0 +1,35 @@
+{% macro project_card(project, initially_hidden=false) -%}
+<x-card
+  data-project-card
+  data-category="{{ project.category | lower }}"
+  data-featured="{{ 'true' if project.featured else 'false' }}"
+  {% if initially_hidden %}hidden{% endif %}
+>
+  <x-carousel slot="media">
+    {% for image in project.images|default([]) %}
+      <img src="{{ image.url }}" alt="{{ image.alt }}">
+    {% endfor %}
+  </x-carousel>
+
+  {% if project.start_date %}
+    <time slot="date" datetime="{{ project.start_date }}">
+      {{ project.start_date.strftime("%b %Y") }}
+    </time>
+  {% else %}
+    <span slot="date">{{ project.date }}</span>
+  {% endif %}
+
+  <span slot="category">{{ project.category|title }}</span>
+  <h3 slot="title">{{ project.title }}</h3>
+
+  <div slot="description">{{ project.description_html|safe|default(project.description) }}</div>
+
+  {% for link in project.links|default([]) %}
+    <a slot="link" href="{{ link.url }}">{{ link.label or 'Read more' }}</a>
+  {% else %}
+    {% if project.url %}
+      <a slot="link" href="{{ project.url }}">View project →</a>
+    {% endif %}
+  {% endfor %}
+</x-card>
+{%- endmacro %}

@@ -11,3 +11,10 @@
     margin: 0.75rem 0;
   }
 }
+
+.card-list { display: grid; gap: 1rem; }
+x-card[hidden] { display: none !important; }
+
+.card-list x-card [slot="description"] p {
+  margin: 0.25rem 0;
+}

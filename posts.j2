@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Hu</title>
+  <link rel="stylesheet" href="/static/variables.css">
+  <link rel="stylesheet" href="/static/portfolio.css">
+  <link rel="stylesheet" href="/static/main.css">
+  <script src="/static/card.js" defer></script>
+  <script src="/static/carousel.js" defer></script>
+  <script src="/static/filter.js" defer></script>
+</head>
+<body>
+    {% include 'header.j2' %}
+    <main>
+        <h1 class="title" id="welcome">Welcome to my website</h1>
+        </p>
+        <h1 class="title" id="projects">Projects</h1>
+{% from "project-card.j2" import project_card %}
+
+<section data-project-filter data-default-filter="all">
+  <nav aria-label="Filter posts by category">
+    <button type="button" data-filter-value="all">All</button>
+    <button type="button" data-filter-value="homelab">Homelab</button>
+    <button type="button" data-filter-value="development">Development</button>
+    <button type="button" data-filter-value="media">Media</button>
+  </nav>
+
+  <div class="card-list">
+    {% for project in projects %}
+      {{ project_card(project) }}
+    {% endfor %}
+  </div>
+</section>
+    </main>
+</body>
+</html>
