@@ -24,26 +24,28 @@ configure_logging()
 logger = logging.getLogger(__name__)
 
 
-# step 1 convert yaml into json
-def convert_yaml(yaml_file, json_file):
-    try:
-        with open(yaml_file, "r") as f:
-            site_data = yaml.safe_load(f)
-        with open(json_file, "w") as f:
-            json.dump(site_data, f)
-        logger.info(f"Converted {yaml_file} to {json_file}")
-    except Exception as e:
-        logger.error(f"Error converting {yaml_file} to {json_file}: {e}")
+    # # step 1 convert yaml into json
+    # def convert_yaml(yaml_file, json_file):
+    #     try:
+    #         with open(yaml_file, "r") as f:
+    #             site_data = yaml.safe_load(f)
+    #         with open(json_file, "w") as f:
+    #             json.dump(site_data, f)
+    #         logger.info(f"Converted {yaml_file} to {json_file}")
+    #     except Exception as e:
+    #         logger.error(f"Error converting {yaml_file} to {json_file}: {e}")
 
 # step 2 convert root templates
-def convert_root_templates(featured_posts):
+def convert_root_templates():
+    with open("site.yaml", "r") as f:
+        site_data = yaml.safe_load(f)
     env = Environment(loader=FileSystemLoader('.'))
     for template_name in ["index.j2", "resume.j2", "posts.j2"]:
         template_basename = Path(template_name).stem
         template_basename = template_basename if template_basename != "index" else "home"
         try:
             template = env.get_template(template_name)
-            html = template.render(current_page=template_basename, featured_posts=featured_posts)
+            html = template.render(current_page=template_basename, projects=site_data)
             output_filename = template_name.replace(".j2", ".html")
             output_path = Path("public") / output_filename
             with open(output_path, "w") as f:
@@ -132,8 +134,8 @@ def main():
     for dir in [static_dir, public_dir]:
         if not dir.exists():
             dir.mkdir(parents=True, exist_ok=True)
-    convert_yaml("site.yaml", Path("public") / "content.json")
-    convert_root_templates({})
+    # convert_yaml("site.yaml", Path("public") / "content.json")
+    convert_root_templates()
     convert_markdown_posts()
     copy_static_files()
 
