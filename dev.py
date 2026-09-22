@@ -7,7 +7,7 @@ from livereload import Server
 from tornado.web import StaticFileHandler
 from watchfiles import watch
 
-from build import convert_yaml, convert_root_templates, convert_markdown_posts, copy_static_files
+from build import convert_root_templates, convert_markdown_posts, copy_static_files
 
 PUBLIC_DIR = Path("public").resolve()
 
@@ -44,8 +44,8 @@ def watch_files():
     for changes in watch('.', watch_filter=assets_filter):
         for change, path in changes:
             print(f"Detected change in {path}. Rebuilding...")
-            convert_yaml("site.yaml", "public/content.json")
-            convert_root_templates({})
+            # convert_yaml("site.yaml", "public/content.json")
+            convert_root_templates()
             convert_markdown_posts()
             copy_static_files()
 
