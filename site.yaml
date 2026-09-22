@@ -1,20 +1,37 @@
-insta-v2ray:
+- slug: "insta-v2ray"
   title: "Insta-V2Ray"
-  description: "A Python Flask web application that provides a simple interface for generating V2Ray configuration files and QR codes. It supports WebSocket connections and allows users to customize their V2Ray settings. A Python Flask web application that provides a simple interface for generating V2Ray configuration files and QR codes. It supports WebSocket connections and allows users to customize their V2Ray settings."
+  description: "A Python Flask web application that provides a simple interface for generating V2Ray configuration files and QR codes. It supports [WebSocket](https://example.com) connections and allows users to customize their V2Ray settings. A Python Flask web application that provides a **simple interface** for generating V2Ray configuration files and QR codes. It supports WebSocket connections and allows users to customize their V2Ray settings."
   url: "https://github.com/vttc08/insta-v2ray"
   tags: ["Python", "Flask", "Networking", "V2Ray", "WebSockets"]
   category: "GitHub"
   type: "Fullstack Python Flask Application"
-  start_date: "2025-05-01"
+  images:
+    - url: "/static/images/cpu1.jpg"
+      alt: "Insta-V2Ray Screenshot"
+    - url: "/static/images/cpu2.jpg"
+      alt: "Insta-V2Ray Screenshot 2"
+  start_date: 2025-05-01
   end_date: "2026-01-31"
+  featured: true
 
-htpc-troubleshooter:
+- slug: "htpc-troubleshooter"
   title: "HTPC Troubleshooter"
   description: "A multilingual web application for diagnosing home theater playback issues. It uses FastAPI, HTMX, Jinja2, and Hugo, with integrations for Jellyfin, Home Assistant, ffmpeg, and onkyo-eiscp."
   url: "/htpc-troubleshooter"
   tags: ["Python", "FastAPI", "HTMX", "Jinja2", "Hugo", "Home Theater"]
   category: "Homelab"
   type: "Fullstack Python FastAPI Application"
-  start_date: "2024-11-01"
+  start_date: 2024-11-01
+  end_date: "2025-05-31"
+  read_more: "Learn more about the HTPC Troubleshooter and its features."
+
+- slug: "htpc-troubleshooter"
+  title: "HTPC Troubleshooter"
+  description: "A multilingual web application for diagnosing home theater playback issues. It uses FastAPI, HTMX, Jinja2, and Hugo, with integrations for Jellyfin, Home Assistant, ffmpeg, and onkyo-eiscp."
+  url: "/htpc-troubleshooter"
+  tags: ["Python", "FastAPI", "HTMX", "Jinja2", "Hugo", "Home Theater"]
+  category: "Homelab"
+  type: "Fullstack Python FastAPI Application"
+  start_date: 2024-11-01
   end_date: "2025-05-31"
   read_more: "Learn more about the HTPC Troubleshooter and its features."

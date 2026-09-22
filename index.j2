@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/static/variables.css">
   <link rel="stylesheet" href="/static/portfolio.css">
   <link rel="stylesheet" href="/static/main.css">
+  <script src="/static/card.js" defer></script>
+  <script src="/static/carousel.js" defer></script>
+  <script src="/static/filter.js" defer></script>
 </head>
 <body>
     {% include 'header.j2' %}
@@ -17,6 +20,21 @@
         <p>In 2022, I got into self-hosting and homelabbing, which pushed me deeper into open-source software, home automation, networking, and infrastructure. What started with simple hardware fixes turned into a home setup with servers, storage, virtualization, VLANs, and VPN access. I also build web applications and like using practical tools to solve real problems for myself and my family.
         </p>
         <h1 class="title" id="projects">Projects</h1>
+        {% from "project-card.j2" import project_card %}
+          <nav aria-label="Filter posts by category">
+            <button type="button" data-filter-value="all">All</button>
+            <button type="button" data-filter-value="featured">Featured</button>
+            <button type="button" data-filter-value="homelab">Homelab</button>
+            <button type="button" data-filter-value="development">Development</button>
+            <button type="button" data-filter-value="media">Media</button>
+        </nav>
+        <div class="projects">
+            <div class="card-list">
+                {% for project in projects %}
+                    {{ project_card(project, initially_hidden=project.featured) }}
+                {% endfor %}
+            </div>
+        </div>
     </main>
 </body>
 </html>

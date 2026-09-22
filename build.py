@@ -36,9 +36,12 @@ logger = logging.getLogger(__name__)
     #         logger.error(f"Error converting {yaml_file} to {json_file}: {e}")
 
 # step 2 convert root templates
+
 def convert_root_templates():
     with open("site.yaml", "r") as f:
         site_data = yaml.safe_load(f)
+    for data in site_data:
+        data['description_html'] = Markup(markdown.markdown(data.get('description', '')))
     env = Environment(loader=FileSystemLoader('.'))
     for template_name in ["index.j2", "resume.j2", "posts.j2"]:
         template_basename = Path(template_name).stem
