@@ -33,25 +33,32 @@
   --gutter: 1.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131313;
-    --accent-bg: #1b1b1b;
-    --text: #e5e2e1;
-    --text-light: #c2c6d3;
-    --border: #424752;
-    --accent: #6495ed;
-    --accent-hover: #4169e1;
-    --accent-text: #131313;
-    --code: #acc7ff;
-    --preformatted: #e5e2e1;
-    --marked: #353535;
-    /* Note */
-    --note-border: #0b3263;
-    --note-background: #1b2638;
-    --note-heading: #315082;
-    --note-heading-text: var(--text);
-    /* Card */
-    --card-background: #20201f;
-  }
+:root {
+  color-scheme: light dark; /* No data-theme: follow the system */
+
+  --bg: light-dark(#fefffe, #131313);
+  --accent-bg: light-dark(#f4f4f4, #1b1b1b);
+  --text: light-dark(#2a2a2a, #e5e2e1);
+  --text-light: light-dark(#424752, #c2c6d3);
+  --border: light-dark(#8c909d, #424752);
+  --accent: #6495ed;
+  --accent-hover: #4169e1;
+  --accent-text: light-dark(#f5fffa, #131313);
+  --code: light-dark(#235cb1, #acc7ff);
+  --preformatted: light-dark(#2a2a2a, #e5e2e1);
+  --marked: light-dark(#e1e5f0e2, #353535);
+  --card-background: light-dark(#e2e2e3, #20201f);
+
+  --note-border: light-dark(#4169e1, #0b3263);
+  --note-background: light-dark(#eaf2ff, #1b2638);
+  --note-heading: light-dark(#6495ed, #315082);
+  --note-heading-text: light-dark(#002d63, #e5e2e1);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
