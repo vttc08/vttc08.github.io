@@ -41,7 +41,7 @@ class ProjectCard extends HTMLElement {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
-          gap: 0.5rem 1rem;
+          gap: 0.2rem 1rem;
           margin-bottom: 0.25rem;
           color: var(--text-light, #59616d);
           font-family: var(--font-mono, "Geist Mono", monospace);
@@ -122,6 +122,12 @@ class ProjectCard extends HTMLElement {
           line-height: 1;
         }
 
+        @media (min-width: 761px) and (max-width: 1024px) {
+          ::slotted(x-carousel[slot="media"]) {
+            --carousel-aspect-ratio: 1/1;
+          }
+        }
+
         @media (max-width: 760px) {
           article {
             grid-template-columns: 1fr;
@@ -138,6 +144,11 @@ class ProjectCard extends HTMLElement {
           footer {
             align-items: flex-start;
             flex-direction: column;
+          }
+        }
+        @media (min-width: 560px) and (max-width: 760px) {
+          ::slotted(x-carousel[slot="media"]) {
+            --carousel-aspect-ratio: 2/1;
           }
         }
       </style>
