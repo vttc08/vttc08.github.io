@@ -1,17 +1,88 @@
+- slug: "50-words"
+  title: "50 Words"
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
+    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
+    tincidunt, risus aliquet massa, vitae tincidunt lorem augue sed
+    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
+    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
+    placerat, lorem mauris.
+  category: "GitHub"
+  type: "Layout sample"
+  url: "https://github.com/vttc08/insta-v2ray"
+  images:
+    - url: "/static/images/cpu1.jpg"
+      alt: "Sample project image"
+  start_date: 2025-01-01
+
+- slug: "58-words"
+  title: "58 Words"
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
+    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
+    tincidunt, risus justo aliquet massa, vitae tincidunt lorem augue sed
+    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
+    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
+    placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
+  category: "GitHub"
+  type: "Layout sample"
+  url: "https://github.com/vttc08/58-words"
+  images:
+    - url: "/static/images/cpu1.jpg"
+      alt: "Sample project image"
+  start_date: 2025-02-01
+
+- slug: "66-words"
+  title: "66 Words"
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
+    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
+    tincidunt, risus justo aliquet massa, vitae tincidunt lorem augue sed
+    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
+    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
+    placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
+    Maecenas blandit metus quis magna suscipit, ac varius.
+  category: "GitHub"
+  url: "https://github.com/vttc08/66-words"
+  type: "Layout sample"
+  images:
+    - url: "/static/images/cpu1.jpg"
+      alt: "Sample project image"
+  start_date: 2025-03-01
+
+- slug: "74-words"
+  title: "74 Words"
+  description: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
+    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
+    tincidunt, risus justo aliquet massa, vitae tincidunt lorem augue sed
+    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
+    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
+    placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
+    Maecenas blandit metus quis magna suscipit, ac varius. Nunc feugiat libero
+    vitae risus posuere, et faucibus.
+  category: "GitHub"
+  url: "https://github.com/vttc08/74-words"
+  type: "Layout sample"
+  images:
+    - url: "/static/images/cpu1.jpg"
+      alt: "Sample project image"
+  start_date: 2025-04-01
+
 - slug: "insta-v2ray"
   title: "Insta-V2Ray"
   description: "A Python Flask web application that provides a simple interface for generating V2Ray configuration files and QR codes. It supports [WebSocket](https://example.com) connections and allows users to customize their V2Ray settings. A Python Flask web application that provides a **simple interface** for generating V2Ray configuration files and QR codes. It supports WebSocket connections and allows users to customize their V2Ray settings."
   url: "https://github.com/vttc08/insta-v2ray"
   tags: ["Python", "Flask", "Networking", "V2Ray", "WebSockets"]
   category: "GitHub"
-  type: "Fullstack Python Flask Application"
+  type: "Python Flask "
   images:
     - url: "/static/images/cpu1.jpg"
       alt: "Insta-V2Ray Screenshot"
     - url: "/static/images/cpu2.jpg"
       alt: "Insta-V2Ray Screenshot 2"
   start_date: 2025-05-01
-  end_date: "2026-01-31"
+  end_date: 2026-01-31
   featured: true
 
 - slug: "htpc-troubleshooter"
@@ -22,7 +93,7 @@
   category: "Homelab"
   type: "Fullstack Python FastAPI Application"
   start_date: 2024-11-01
-  end_date: "2025-05-31"
+  end_date: 2025-05-31
   read_more: "Learn more about the HTPC Troubleshooter and its features."
 
 - slug: "htpc-troubleshooter"
@@ -33,5 +104,5 @@
   category: "Homelab"
   type: "Fullstack Python FastAPI Application"
   start_date: 2024-11-01
-  end_date: "2025-05-31"
+  end_date: 2025-05-31
   read_more: "Learn more about the HTPC Troubleshooter and its features."

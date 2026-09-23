@@ -10,26 +10,23 @@
       <img src="{{ image.url }}" alt="{{ image.alt }}">
     {% endfor %}
   </x-carousel>
+  {% set datetext = project.start_date.strftime("%b %Y") %}
+  <time slot="date" datetime="{{ project.start_date }}">
+      {{ datetext }}
+      {% if project.end_date %}
+          - {{ project.end_date.strftime("%b %Y") }}
+      {% endif %}
+  </time>
 
-  {% if project.start_date %}
-    <time slot="date" datetime="{{ project.start_date }}">
-      {{ project.start_date.strftime("%b %Y") }}
-    </time>
-  {% else %}
-    <span slot="date">{{ project.date }}</span>
-  {% endif %}
 
-  <span slot="category">{{ project.category|title }}</span>
+  <span slot="category">{{ project.type|title }}</span>
   <h3 slot="title">{{ project.title }}</h3>
 
   <div slot="description">{{ project.description_html|safe|default(project.description) }}</div>
 
-  {% for link in project.links|default([]) %}
-    <a slot="link" href="{{ link.url }}">{{ link.label or 'Read more' }}</a>
-  {% else %}
-    {% if project.url %}
-      <a slot="link" href="{{ project.url }}">View project →</a>
-    {% endif %}
-  {% endfor %}
+
+  {% if project.url %}
+    <a slot="link" href="{{ project.url }}">{{ project.read_more|default('View project →') }}</a>
+  {% endif %}
 </x-card>
 {%- endmacro %}
