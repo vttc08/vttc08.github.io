@@ -16,12 +16,12 @@
         </p>
         <h1 class="title" id="projects">Projects</h1>
         {% from "project-card.j2" import project_card %}
-          <nav aria-label="Filter posts by category">
-            <button type="button" data-filter-value="all">All</button>
-            <button type="button" data-filter-value="featured">Featured</button>
-            <button type="button" data-filter-value="homelab">Homelab</button>
-            <button type="button" data-filter-value="development">Development</button>
-            <button type="button" data-filter-value="media">Media</button>
+          <nav class="project-filter" aria-label="Filter posts by category">
+            <button class="filter-button" type="button" data-filter-value="all">All</button>
+            <button class="filter-button" type="button" data-filter-value="featured">Awards</button>
+            <button class="filter-button" type="button" data-filter-value="homelab">Homelab</button>
+            <button class="filter-button" type="button" data-filter-value="development">Development</button>
+            <button class="filter-button" type="button" data-filter-value="media">Media</button>
         </nav>
         <div class="projects">
             <div class="card-list">
