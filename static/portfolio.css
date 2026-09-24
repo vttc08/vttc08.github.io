@@ -9,6 +9,7 @@ body {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.5;
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
 main {
@@ -31,6 +32,7 @@ article {
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
   background-color: var(--accent-bg);
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
 .toctitle {
@@ -138,7 +140,7 @@ h1,
 h2 {
   font-family: "REM", sans-serif;
   font-weight: 700;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 h3,
@@ -364,6 +366,7 @@ details[open] summary::after {
 .site-header {
   background: var(--accent-bg);
   border-bottom: 1px solid var(--border);
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
 .site-header-elements {

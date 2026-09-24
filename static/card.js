@@ -18,6 +18,7 @@ class ProjectCard extends HTMLElement {
           overflow: hidden;
           border-radius: var(--card-border-radius, 0.375rem);
           background: var(--card-background);
+            transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
         }
 
         .media {
@@ -70,7 +71,7 @@ class ProjectCard extends HTMLElement {
         ::slotted([slot="description"]) {
           margin: 0 !important;
           color: inherit;
-          font: inherit !important;
+          font-size: 0.95rem !important;
         }
 
         .tags {

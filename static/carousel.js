@@ -61,25 +61,59 @@ class XCarousel extends HTMLElement {
 
                 z-index: 10;
 
-                width: 20px;
-                height: 20px;
+                width: 25px;
+                height: 100%;
 
-                border: none;
-                border-radius: 50%;
-
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba(0, 0, 0, 0.3);
                 color: white;
+                border: none;
 
-                font-size: 12px;
+                font-size: 24px;
                 cursor: pointer;
+                transition: background-color 180ms ease;
+            }
+
+            @media (max-width: 760px) {
+                button {
+                    width: 30px;
+                }
+            }
+
+            @media (hover: hover) {
+                button {
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 180ms ease, transform 180ms ease,
+                        background-color 180ms ease;
+                }
+
+                .prev {
+                    transform: translate(-8px, -50%);
+                }
+
+                .next {
+                    transform: translate(8px, -50%);
+                }
+
+                .carousel:is(:hover, :focus-within) button {
+                    opacity: 1;
+                    pointer-events: auto;
+                    transform: translate(0, -50%);
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                button {
+                    transition: none;
+                }
             }
 
             .prev {
-                left: 12px;
+                left: 0px;
             }
 
             .next {
-                right: 12px;
+                right: 0px;
             }
 
             button:hover {
