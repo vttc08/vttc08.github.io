@@ -9,15 +9,7 @@ from pathlib import Path
 import shutil
 import logging
 
-def configure_logging():
-    logging.basicConfig(
-        level=logging.INFO,
-        format='[%(levelname)s] - %(message)s',
-        handlers=[
-            logging.FileHandler("build.log"),
-            logging.StreamHandler()
-        ]
-    )
+from logging_config import configure_logging
 
 configure_logging()
 
