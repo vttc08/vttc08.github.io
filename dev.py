@@ -7,7 +7,7 @@ from livereload import Server
 from tornado.web import StaticFileHandler
 from watchfiles import watch
 
-from build import convert_root_templates, convert_markdown_posts, copy_static_files
+from build import convert_markdown_posts, convert_root_templates, copy_static_files
 
 PUBLIC_DIR = Path("public").resolve()
 
