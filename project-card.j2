@@ -20,7 +20,7 @@
 
 
   <span slot="category">{{ project.type|title }}</span>
-  <h3 slot="title">{{ project.title }}</h3>
+  <h3 slot="title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
 
   <div slot="description">{{ project.description_html|safe|default(project.description) }}</div>
 

@@ -19,6 +19,16 @@ x-card[hidden] { display: none !important; }
   margin: 0.25rem 0;
 }
 
+x-card h3[slot="title"] a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+x-card h3[slot="title"] a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
 .project-filter {
   display: flex;
   flex-wrap: wrap;
