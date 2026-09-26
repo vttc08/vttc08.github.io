@@ -1,17 +1,17 @@
-import markdown
-import frontmatter
-from jinja2 import Environment, FileSystemLoader, exceptions
-from markupsafe import Markup
-from datetime import date, datetime
-import yaml
-import json
-from pathlib import Path
-import shutil
-import rcssmin
-import rjsmin
 import logging
 import re
+import shutil
+from datetime import date, datetime
+from pathlib import Path
 
+import frontmatter
+import rcssmin
+import rjsmin
+import yaml
+from jinja2 import Environment, FileSystemLoader, exceptions
+from markupsafe import Markup
+
+import markdown
 from logging_config import configure_logging
 
 configure_logging()
@@ -87,7 +87,7 @@ def convert_markdown_posts():
             date_obj = post.get('date', 'Unknown')
             try:
                 if isinstance(date_obj, date):
-                    date_obj = date_obj
+                    pass
                 else:
                     date_obj = datetime.fromisoformat(date_obj)
                 formatted_date = date_obj.strftime("%B %d, %Y")
@@ -105,7 +105,7 @@ def convert_markdown_posts():
             with open(output_path, "w") as f:
                 f.write(final_html)
 
-        except Exception as e:
+        except Exception as e: # noqa: BLE001
             logger.error(f"Error processing {post_file}: {e}")
 
 # Step 4: Copy static files to the public directory
