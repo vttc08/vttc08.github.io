@@ -116,30 +116,24 @@ def copy_static_files():
         for static_file in static_dir.rglob("*"):
             if static_file.name == "favicon.ico":
                 shutil.copy(static_file, public_dir / "favicon.ico")
-            # minify css and js files
-            if static_file.suffix == ".css":
-                with open(static_file, "r") as f:
-                    minified_css = rcssmin.cssmin(f.read())
-                relative_path = static_file.relative_to(static_dir)
-                destination = public_dir / "static" / relative_path
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                with open(destination, "w") as f:
-                    f.write(minified_css)
-            elif static_file.suffix == ".js":
-                with open(static_file, "r") as f:
-                    source = _minify_embedded_css(f.read())
-                    minified_js = rjsmin.jsmin(source)
-                relative_path = static_file.relative_to(static_dir)
-                destination = public_dir / "static" / relative_path
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                with open(destination, "w") as f:
-                    f.write(minified_js)
             elif static_file.is_file():
                 relative_path = static_file.relative_to(static_dir)
                 destination = public_dir / "static" / relative_path
                 destination.parent.mkdir(parents=True, exist_ok=True)
-                with open(static_file, "rb") as src, open(destination, "wb") as dst:
-                    dst.write(src.read())
+                if static_file.suffix == "css":
+                    with open(static_file, "r") as f:
+                        minified_css = rcssmin.cssmin(f.read())
+                    with open(destination, "w") as f:
+                        f.write(minified_css)
+                elif static_file.suffix == "js":
+                    with open(static_file, "r") as f:
+                        source = _minify_embedded_css(f.read())
+                        minified_js = rjsmin.jsmin(source)
+                    with open(destination, "w") as f:
+                        f.write(minified_js)
+                else:
+                    with open(static_file, "rb") as src, open(destination, "wb") as dst:
+                        dst.write(src.read())
 
 def main():
     shutil.rmtree(Path("public"), ignore_errors=True)
