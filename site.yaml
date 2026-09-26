@@ -9,9 +9,9 @@
     placerat, lorem mauris.
   category: "GitHub"
   type: "Layout sample"
-  url: "https://github.com/vttc08/insta-v2ray"
+  url: "/post/post"
   images:
-    - url: "/static/images/cpu1.jpg"
+    - url: "/static/images/cpu1.webp"
       alt: "Sample project image"
   start_date: 2025-01-01
 
@@ -26,9 +26,9 @@
     placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
   category: "GitHub"
   type: "Layout sample"
-  url: "https://github.com/vttc08/58-words"
+  url: "/post/newpost"
   images:
-    - url: "/static/images/cpu1.jpg"
+    - url: "/static/images/cpu1.webp"
       alt: "Sample project image"
   start_date: 2025-02-01
 
@@ -46,7 +46,7 @@
   url: "https://github.com/vttc08/66-words"
   type: "Layout sample"
   images:
-    - url: "/static/images/cpu1.jpg"
+    - url: "/static/images/cpu1.webp"
       alt: "Sample project image"
   start_date: 2025-03-01
 
@@ -65,7 +65,7 @@
   url: "https://github.com/vttc08/74-words"
   type: "Layout sample"
   images:
-    - url: "/static/images/cpu1.jpg"
+    - url: "/static/images/cpu1.webp"
       alt: "Sample project image"
   start_date: 2025-04-01
 
@@ -77,9 +77,9 @@
   category: "GitHub"
   type: "Python Flask "
   images:
-    - url: "/static/images/cpu1.jpg"
+    - url: "/static/images/cpu1.webp"
       alt: "Insta-V2Ray Screenshot"
-    - url: "/static/images/cpu2.jpg"
+    - url: "/static/images/cpu2.webp"
       alt: "Insta-V2Ray Screenshot 2"
   start_date: 2025-05-01
   end_date: 2026-01-31
