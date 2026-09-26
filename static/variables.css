@@ -1,0 +1,52 @@
+:root {
+  /* Typography */
+  --font-body: "Roboto", sans-serif;
+  --font-display: "REM", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  /* Geometry */
+  --standard-border-radius: 0.25rem;
+  --border-width: 1px;
+
+  /* Note */
+  --note-border: #4169e1;
+  --note-background: #eaf2ff;
+  --note-heading: #6495ed;
+  --note-heading-text: #002d63;
+
+  --content-width: 60rem;
+  --reading-width: 56rem;
+  --gutter: 1.25rem;
+
+  --transition-duration: 0.5s;
+}
+
+:root {
+  color-scheme: light dark; /* No data-theme: follow the system */
+
+  --bg: light-dark(#fefffe, #131313);
+  --accent-bg: light-dark(#f4f4f4, #1b1b1b);
+  --text: light-dark(#2a2a2a, #e5e2e1);
+  --text-light: light-dark(#424752, #c2c6d3);
+  --border: light-dark(#8c909d, #424752);
+  --accent: #6495ed;
+  --accent-hover: #4169e1;
+  --accent-text: light-dark(#f5fffa, #131313);
+  --code: light-dark(#235cb1, #acc7ff);
+  --preformatted: light-dark(#2a2a2a, #e5e2e1);
+  --marked: light-dark(#e1e5f0e2, #353535);
+  --card-background: light-dark(#e2e2e3, #20201f);
+
+  --note-border: light-dark(#4169e1, #0b3263);
+  --note-background: light-dark(#eaf2ff, #1b2638);
+  --note-heading: light-dark(#6495ed, #315082);
+  --note-heading-text: light-dark(#002d63, #e5e2e1);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
