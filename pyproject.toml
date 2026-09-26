@@ -12,6 +12,8 @@ dependencies = [
     "pymarkdownlnt>=0.9.40",
     "pymdown-extensions>=12.0.1",
     "python-frontmatter>=1.3.0",
+    "rcssmin>=1.2.2",
+    "rjsmin>=1.2.5",
 ]
 
 [dependency-groups]
