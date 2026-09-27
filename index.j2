@@ -5,31 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kevin Hu</title>
   {% include 'head.j2' %}
+  <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
 </head>
 <body>
-    {% include 'header.j2' %}
-    <main>
-        <h1 class="title" id="welcome">Welcome to my website</h1>
-        <p>Hello. I'm Kevin Hu, a Computer Information Technology student at BCIT. I've been tinkering with computers and software since I was a teenager, and that led me into video production, web development, and systems work. Over time, I also grew YouTube channels to more than 25,000 subscribers, which taught me how to plan, edit, and finish projects end to end.
-        </p>
-        <p>In 2022, I got into self-hosting and homelabbing, which pushed me deeper into open-source software, home automation, networking, and infrastructure. What started with simple hardware fixes turned into a home setup with servers, storage, virtualization, VLANs, and VPN access. I also build web applications and like using practical tools to solve real problems for myself and my family.
-        </p>
-        <h1 class="title" id="projects">Projects</h1>
-        {% from "project-card.j2" import project_card %}
-          <nav class="project-filter" aria-label="Filter posts by category">
-            <button class="filter-button" type="button" data-filter-value="all">All</button>
-            <button class="filter-button" type="button" data-filter-value="featured">Awards</button>
-            <button class="filter-button" type="button" data-filter-value="homelab">Homelab</button>
-            <button class="filter-button" type="button" data-filter-value="development">Development</button>
-            <button class="filter-button" type="button" data-filter-value="media">Media</button>
-        </nav>
-        <div class="projects">
-            <div class="card-list">
-                {% for project in projects %}
-                    {{ project_card(project, initially_hidden=project.featured) }}
-                {% endfor %}
-            </div>
+  {% include 'header.j2' %}
+  <main>
+    <section class="home-intro" aria-labelledby="welcome">
+      <div>
+        <h1 id="welcome">Hi, I'm Kevin Hu.</h1>
+        <p class="home-lead">I'm a Computer Information Technology student at BCIT. I work on my homelab and build practical tools for people to use.</p>
+        <details class="about-me" open>
+          <summary>
+            <span class="summary-more">Read more</span>
+            <span class="summary-less">Show less</span>
+          </summary>
+          <p>I've been tinkering with computers and software since I was a teenager, and that led me into video production, web development, and systems work. Over time, I grew YouTube channels to more than 25,000 subscribers, which taught me how to plan, edit, and finish projects end to end.</p>
+          <p>In 2022, I got into self-hosting and homelabbing, which pushed me deeper into open-source software, home automation, networking, and infrastructure. What started with simple hardware fixes turned into a home setup with servers, storage, virtualization, VLANs, and VPN access. I also build web applications and like using practical tools to solve real problems for myself and my family.</p>
+        </details>
+      </div>
+
+      <div class="home-social">
+        <h2>Find me online</h2>
+        <div class="home-social-links">
+          <a class="home-social-link" href="https://github.com/vttc08" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span><i class="nf nf-cod-github" aria-hidden="true"></i>
+          </a>
+          <a class="home-social-link" href="https://www.linkedin.com/in/kevin-zhi-shu-hu/" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span><i class="nf nf-dev-linkedin" aria-hidden="true"></i>
+          </a>
         </div>
-    </main>
+      </div>
+    </section>
+
+    <section class="home-projects" aria-labelledby="projects">
+      <h2 id="projects">Projects</h2>
+      {% from "project-card.j2" import project_card %}
+      <nav class="project-filter" aria-label="Filter posts by category">
+        <button class="filter-button" type="button" data-filter-value="all">All</button>
+        <button class="filter-button" type="button" data-filter-value="featured">Awards</button>
+        <button class="filter-button" type="button" data-filter-value="homelab">Homelab</button>
+        <button class="filter-button" type="button" data-filter-value="development">Development</button>
+        <button class="filter-button" type="button" data-filter-value="media">Media</button>
+      </nav>
+      <div class="card-list">
+        {% for project in projects %}
+          {{ project_card(project, initially_hidden=project.featured) }}
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+<script>
+  const details = document.querySelector(".about-me");
+  const mobile = window.matchMedia("(max-width: 768px)");
+
+  function updateAboutLayout(event) {
+    details.open = !event.matches;
+  }
+  updateAboutLayout(mobile);
+  mobile.addEventListener("change", updateAboutLayout);
+</script>
 </body>
 </html>
