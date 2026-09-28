@@ -1,36 +1,37 @@
-- slug: "50-words"
-  title: "50 Words"
+- slug: "find-my-force"
+  title: "Find My Force - Red Team Hackathon 2026"
   description: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
-    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
-    tincidunt, risus aliquet massa, vitae tincidunt lorem augue sed
-    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
-    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
-    placerat, lorem mauris.
-  category: "GitHub"
-  type: "Layout sample"
-  url: "/post/post"
+    Our team built **Find My Force**, a real-time RF detection, classification, and geolocation system powered by semi-supervised machine learning, RSSI, IQ data and TDoA. The results were processed by Flask and SocketIO backend and streamed to a web dashboard using React and Leaflet map. I was responsible for brining together the ML model, geolocation algorithm, data parsing and the frontend. Despite working with unfamiliar technologies, our team adapter quickly and worked closely to deliver a cohesive solution.
+  category: "Development"
+  type: "🏆 1st Place Hackathon Winner"
+  tags: ["Python", "Flask", "React", "Leaflet", "Machine Learning", "Hackathon"]
+  url: "https://www.bcit.ca/news/stories/computing-takes-first-place/"
   images:
-    - url: "/static/images/cpu1.webp"
-      alt: "Sample project image"
-  start_date: 2025-01-01
+    - url: "https://www.bcit.ca/wp-content/uploads/2026/03/RedTeam1-1024x512.png"
+      alt: "Marco Yu, Bruce Weng, Jackson Fleming, Kevin Hu, Gaston Roxas (not shown)"
+    - url: "/static/images/redteamhack.webp"
+      alt: "Marco Yu, Bruce Weng, Jackson Fleming, Kevin Hu, Gaston Roxas (not shown)"
+  start_date: 2026-03-07
+  featured: true
+  read_more: "Computing takes first place and more at defence tech hack"
 
-- slug: "58-words"
-  title: "58 Words"
+- slug: "clarity-index"
+  title: "Clarity Index 360"
   description: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
-    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
-    tincidunt, risus justo aliquet massa, vitae tincidunt lorem augue sed
-    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
-    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
-    placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
-  category: "GitHub"
-  type: "Layout sample"
-  url: "/post/newpost"
+    I worked with a team of BCIT students on a [BCIT ISSP (Industry Sponsored Student Project)](https://www.bcit.ca/computing-academic-studies/industry-sponsored-student-projects/), focusing on 360 leadership assessment, built with React and Firebase. This application replaced manual Excel macro based workflow. I focused on Chart.js vsualization, data processing and client-side PDF report generation. I participated in weekly sponsor meetings to translate business requirements into technical solution and helped present the final product at the expo, where our team won first place.
+  category: "Development"
+  type: "🏆 1st Place BCIT ISSP Winner"
+  tags: ["React", "Firebase", "Chart.js", "Project Management"]
+  url: "https://lnkd.in/p/gbr8J2u8"
   images:
-    - url: "/static/images/cpu1.webp"
-      alt: "Sample project image"
-  start_date: 2025-02-01
+    - url: "https://media.licdn.com/dms/image/v2/D5622AQFtlPEhSzzpsg/feedshare-shrink_800/B56Z2NhPvgH4Ac-/0/1776195796180?e=1792022400&v=beta&t=H6syfCL8PsAtac9Vzy5hqscpZ6bUoZkW9_rq2uKufgE"
+      alt: "Linkedin post image from BCIT"
+    - url: "/static/images/issp.webp"
+      alt: "ISSP Homepage"
+  start_date: 2026-01-01
+  end_date: 2026-04-30
+  featured: true
+  read_more: "BCIT Computing LinkedIn Post"
 
 - slug: "66-words"
   title: "66 Words"
