@@ -241,3 +241,37 @@ x-card h3[slot="title"] a:hover {
     margin-bottom: 0.85rem;
   }
 }
+
+/* Resume Page */
+#popup {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: var(--standard-border-radius);
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-12.5%, -42%);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#popup.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-12.5%, -50%);
+}
+
+
+#popup a {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--standard-border-radius);
+}
