@@ -1,7 +1,7 @@
 - slug: "find-my-force"
   title: "Find My Force - Red Team Hackathon 2026"
   description: >-
-    Our team built **Find My Force**, a real-time RF detection, classification, and geolocation system powered by semi-supervised machine learning, RSSI, IQ data and TDoA. The results were processed by Flask and SocketIO backend and streamed to a web dashboard using React and Leaflet map. I was responsible for brining together the ML model, geolocation algorithm, data parsing and the frontend. Despite working with unfamiliar technologies, our team adapter quickly and worked closely to deliver a cohesive solution.
+    Our team built **Find My Force**, a real-time RF detection, classification, and geolocation system powered by semi-supervised machine learning, RSSI, IQ data and TDoA. The results were processed by Flask and SocketIO backend and streamed to a web dashboard using React and Leaflet map. I was responsible for bringing together the ML model, geolocation algorithm, data parsing and the frontend. Despite working with unfamiliar technologies, our team adapter quickly and worked closely to deliver a cohesive solution.
   category: "Development"
   type: "🏆 1st Place Hackathon Winner"
   tags: ["Python", "Flask", "React", "Leaflet", "Machine Learning", "Hackathon"]
@@ -10,7 +10,7 @@
     - url: "https://www.bcit.ca/wp-content/uploads/2026/03/RedTeam1-1024x512.png"
       alt: "Marco Yu, Bruce Weng, Jackson Fleming, Kevin Hu, Gaston Roxas (not shown)"
     - url: "/static/images/redteamhack.webp"
-      alt: "Marco Yu, Bruce Weng, Jackson Fleming, Kevin Hu, Gaston Roxas (not shown)"
+      alt: "Redteam Hack Kevin Hu"
   start_date: 2026-03-07
   featured: true
   read_more: "Computing takes first place and more at defence tech hack"
@@ -24,7 +24,7 @@
   tags: ["React", "Firebase", "Chart.js", "Project Management"]
   url: "https://lnkd.in/p/gbr8J2u8"
   images:
-    - url: "https://media.licdn.com/dms/image/v2/D5622AQFtlPEhSzzpsg/feedshare-shrink_800/B56Z2NhPvgH4Ac-/0/1776195796180?e=1792022400&v=beta&t=H6syfCL8PsAtac9Vzy5hqscpZ6bUoZkW9_rq2uKufgE"
+    - url: "/static/images/linkedin-issp.webp"
       alt: "Linkedin post image from BCIT"
     - url: "/static/images/issp.webp"
       alt: "ISSP Homepage"
@@ -33,77 +33,36 @@
   featured: true
   read_more: "BCIT Computing LinkedIn Post"
 
-- slug: "66-words"
-  title: "66 Words"
-  description: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
-    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
-    tincidunt, risus justo aliquet massa, vitae tincidunt lorem augue sed
-    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
-    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
-    placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
-    Maecenas blandit metus quis magna suscipit, ac varius.
-  category: "GitHub"
-  url: "https://github.com/vttc08/66-words"
-  type: "Layout sample"
-  images:
-    - url: "/static/images/cpu1.webp"
-      alt: "Sample project image"
-  start_date: 2025-03-01
-
-- slug: "74-words"
-  title: "74 Words"
-  description: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
-    magna at nibh feugiat luctus. Curabitur posuere, lectus sed facilisis
-    tincidunt, risus justo aliquet massa, vitae tincidunt lorem augue sed
-    neque. Praesent commodo nisl in sapien faucibus, vel tempor erat
-    dignissim. Suspendisse potenti. Donec euismod, nunc vitae volutpat
-    placerat, lorem mauris. Aliquam erat volutpat, sed blandit urna viverra.
-    Maecenas blandit metus quis magna suscipit, ac varius. Nunc feugiat libero
-    vitae risus posuere, et faucibus.
-  category: "GitHub"
-  url: "https://github.com/vttc08/74-words"
-  type: "Layout sample"
-  images:
-    - url: "/static/images/cpu1.webp"
-      alt: "Sample project image"
-  start_date: 2025-04-01
-
 - slug: "insta-v2ray"
   title: "Insta-V2Ray"
-  description: "A Python Flask web application that provides a simple interface for generating V2Ray configuration files and QR codes. It supports [WebSocket](https://example.com) connections and allows users to customize their V2Ray settings. A Python Flask web application that provides a **simple interface** for generating V2Ray configuration files and QR codes. It supports WebSocket connections and allows users to customize their V2Ray settings."
-  url: "https://github.com/vttc08/insta-v2ray"
-  tags: ["Python", "Flask", "Networking", "V2Ray", "WebSockets"]
-  category: "GitHub"
-  type: "Python Flask "
+  description: >-
+    I've built [Insta-V2Ray](https://github.com/vttc08/insta-v2ray), a Python full-stack application that enables remote access behind CG-NAT, using tunnel providers like Cloudalre, Pinggy and Zrok to provide a DPI resistant websocket tunnel. The application manages tunnel subprocesses concurrently, parses URLs and generate customized V2Ray subscriptions. I used inheritance, polymorphism and encapsulation to create a modular and maintainable codebase. Although I no longer rely on it personally, the project significantly strenghened my understanding of networking and Python OOP, which was helpful in my education. 
+  category: "Development"
+  url: "/post/insta-v2ray"
+  type: "Python Flask Application"
+  tags: ["Python", "Flask", "Websocket", "OOP", "Jinja", "V2Ray", "CG-NAT"]
   images:
-    - url: "/static/images/cpu1.webp"
+    - url: "/static/images/iv2ray1.webp"
       alt: "Insta-V2Ray Screenshot"
-    - url: "/static/images/cpu2.webp"
-      alt: "Insta-V2Ray Screenshot 2"
+    - url: "/static/images/iv2ray2.webp"
+      alt: "Insta-V2Ray Architecture"
   start_date: 2025-05-01
-  end_date: 2026-01-31
-  featured: true
+  end_date: 2025-08-31
 
 - slug: "htpc-troubleshooter"
   title: "HTPC Troubleshooter"
-  description: "A multilingual web application for diagnosing home theater playback issues. It uses FastAPI, HTMX, Jinja2, and Hugo, with integrations for Jellyfin, Home Assistant, ffmpeg, and onkyo-eiscp."
-  url: "/htpc-troubleshooter"
-  tags: ["Python", "FastAPI", "HTMX", "Jinja2", "Hugo", "Home Theater"]
-  category: "Homelab"
-  type: "Fullstack Python FastAPI Application"
+  description: >-
+    Instead of spending 5 minutes with technical support, I developed a multilingual full-stack FastAPI webapp while learning new framework and technologies. It integrates with Jellyfin, Home Assistant, ffmpeg and onkyo-eiscp to diagnose and propose solutions for media playback issues that my parents encounter. HTMX and SSE provide a user-friendly interface with live troubleshooting updates, while a bundled Hugo site provides documentation. This months-long learning experience strengthened my web development skills and solved a practical problem for my family. 
+  category: "Development"
+  url: "/post/htpc-troubleshooter"
+  type: "Python FastAPI Application"
+  tags: ["Python", "FastAPI", "HTMX", "SSE", "Hugo", "Docker", "ffmpeg", "API", "adb"]
+  images:
+    - url: "/static/images/htpcdemo.webp"
+      alt: "HTPC Troubleshooter main interface"
+    - url: "/static/images/htpcdocs.webp"
+      alt: "HTPC Troubleshooter Documentation"
+    - url: "/static/images/htpcdemo2.webp"
+      alt: "HTPC Troubleshooter diagnostic tests"
   start_date: 2024-11-01
   end_date: 2025-05-31
-  read_more: "Learn more about the HTPC Troubleshooter and its features."
-
-- slug: "htpc-troubleshooter"
-  title: "HTPC Troubleshooter"
-  description: "A multilingual web application for diagnosing home theater playback issues. It uses FastAPI, HTMX, Jinja2, and Hugo, with integrations for Jellyfin, Home Assistant, ffmpeg, and onkyo-eiscp."
-  url: "/htpc-troubleshooter"
-  tags: ["Python", "FastAPI", "HTMX", "Jinja2", "Hugo", "Home Theater"]
-  category: "Homelab"
-  type: "Fullstack Python FastAPI Application"
-  start_date: 2024-11-01
-  end_date: 2025-05-31
-  read_more: "Learn more about the HTPC Troubleshooter and its features."
