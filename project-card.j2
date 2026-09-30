@@ -10,7 +10,7 @@
       <img src="{{ image.url }}" alt="{{ image.alt }}">
     {% endfor %}
   </x-carousel>
-  {% set datetext = project.start_date.strftime("%b %Y") %}
+  {% set datetext = project.start_date.strftime("%b %Y") if project.start_date.strftime is defined else project.start_date %}
   <time slot="date" datetime="{{ project.start_date }}">
       {{ datetext }}
       {% if project.end_date %}
