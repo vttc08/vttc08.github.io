@@ -66,7 +66,7 @@ def _slugify_header(text):
 
 required_keys = ['slug', 'title', 'description', 'start_date', 'category', 'type', 'images']
 
-optional_keys = ['end_date', 'url']
+optional_keys = ['url']
 
 categories = ['all','featured','development','media','posts','homelab']
 
@@ -118,10 +118,12 @@ def check_url(url, headers):
     return True
 
 def check_date(key, date_input):
-    if isinstance(date_input, str) or not isinstance(date_input, date):
-        logger.error(f"Post {key}: Date {date_input} is not a valid date object.")
-        return False
-    return True
+    if isinstance(date_input, date):
+        return True
+    if key == 'start_date' and isinstance(date_input, str) and date_input.strip():
+        return True
+    logger.error(f"Post {key}: Date {date_input} is not a valid date object.")
+    return False
 
 def process_one(data):
     slug = data.get('slug', 'unknown')
