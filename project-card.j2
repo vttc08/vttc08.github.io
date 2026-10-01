@@ -20,7 +20,7 @@
 
 
   <span slot="category">{{ project.type|title }}</span>
-  <h3 slot="title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
+  <h3 slot="title">{% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}</h3>
 
   <div slot="description">{{ project.description_html|safe|default(project.description) }}</div>
 
