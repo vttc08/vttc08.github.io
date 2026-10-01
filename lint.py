@@ -4,10 +4,12 @@ import subprocess
 import sys
 from collections import Counter
 from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
 
 import frontmatter
+import markdown
 import yaml
 
 from logging_config import configure_logging
@@ -15,6 +17,40 @@ from logging_config import configure_logging
 configure_logging()
 
 logger = logging.getLogger(__name__)
+
+
+class _DescriptionTextParser(HTMLParser):
+    """Extract text without counting markup, link URLs, or image attributes."""
+
+    block_tags = {'p', 'div', 'br', 'li', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+        self.hidden_depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in {'script', 'style'}:
+            self.hidden_depth += 1
+        if tag in self.block_tags:
+            self.parts.append(' ')
+
+    def handle_endtag(self, tag):
+        if tag in {'script', 'style'}:
+            self.hidden_depth = max(0, self.hidden_depth - 1)
+        if tag in self.block_tags:
+            self.parts.append(' ')
+
+    def handle_data(self, data):
+        if not self.hidden_depth:
+            self.parts.append(data)
+
+
+def _count_characters_in_markdown(source):
+    # Match build.py's default Markdown renderer; normalize layout whitespace.
+    parser = _DescriptionTextParser()
+    parser.feed(markdown.markdown(source))
+    return len(re.sub(r'\s+', ' ', ''.join(parser.parts)).strip())
 
 
 def _count_words_in_markdown(markdown):
@@ -71,9 +107,13 @@ optional_keys = ['url']
 categories = ['all','featured','development','media','posts','homelab']
 
 def check_for_length(post, key, char, string, min_length, max_length):
-    content_length = len(string) if char == 'char' else _count_words_in_markdown(string)
+    if char == 'markdown-char':
+        content_length = _count_characters_in_markdown(string)
+    else:
+        content_length = len(string) if char == 'char' else _count_words_in_markdown(string)
+    unit = 'words' if char == 'word' else 'characters'
     if not (min_length <= content_length <= max_length):
-        logger.warning(f"Post {post.get('slug', 'unknown')}: '{key}' length is {content_length}, but should be between {min_length} and {max_length}.")
+        logger.warning(f"Post {post.get('slug', 'unknown')}: '{key}' length is {content_length} {unit}, but should be between {min_length} and {max_length} {unit}.")
         return False
     return True
 
@@ -140,8 +180,9 @@ def process_one(data):
         logger.warning(f"Post {slug}: Invalid category '{data['category']}'.")
     # Check title length
     check_for_length(data, 'title', 'word', data['title'], 1, 15)
-    # Check description length
-    check_for_length(data, 'description', 'word', data['description'], 60, 80)
+    # Wide desktop: ~5–6 lines at 702px; Find My Force is 511 characters / 6 lines.
+    # Keep this advisory: proportional fonts and word wrapping affect density.
+    check_for_length(data, 'description', 'markdown-char', data['description'], 420, 575)
     # Check type length
     check_for_length(data, 'type', 'char', data['type'], 5, 40)
     # Featured is boolean
