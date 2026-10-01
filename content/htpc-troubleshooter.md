@@ -5,7 +5,7 @@ tags: ["hugo", "example", "markdown"]
 categories: ["example"]
 ---
 
-> Instead of spending at most 5 minutes for technical support, I went down the dark side and built a fullstack app, it only took me couple months… while learning new frameworks and technologies.
+> Instead of spending at most 5 minutes on technical support, I went down the dark side and built a fullstack app, it only took me a couple of months… while learning new frameworks and technologies.
 
 ## Introduction
 
@@ -34,7 +34,7 @@ I'll be transparent and put this at the top. This project could be [useless](#th
 
 ### Motivation
 
-Sometimes in November, we were dining at a restaurant and my dad mentioned he encountered issues watching movies.
+Sometime in November, we were dining at a restaurant and my dad mentioned he encountered issues watching movies.
 > "it just shows a bunch of error code"
 
 Of course, my dad was unhelpful and didn't provide which movies caused it or when it happened, he didn't care. I had to dig through the Jellyfin logs and discovered playback attempts on several movies, all of which played fine when I tested them. Based on my prior testing, I knew exactly what happened and how to "fix" it.
@@ -94,11 +94,11 @@ You might wonder why I invest so much time into the HBR4K+ (you'll definitely as
 | Nvidia Shield       |    ✅    |      ✅      |  ✅   |   ❌   |      ✅      |   ❌  |     $270       |
 | Windows PC          |    ✅    |      ✅      |  ✅   |   ❌   |      ❌      |  ❌   |     Free-ish   |
 
-*As time of writing, the newest Fire TV 4K Max could support TrueHD and DTS-HD, but I don't have one to test.
+*At the time of writing, the newest Fire TV 4K Max could support TrueHD and DTS-HD, but I don't have one to test.
 
 **Price is approximate and subject to change
 
-As shown on the table, HBR4K+ is the only device that checks it all, and at an affordable price.
+As shown on the table, HBR4K+ is the only device that checks it all at an affordable price.
 
 ## The Problems
 
@@ -113,7 +113,7 @@ The box previously has CEC volume control issues, where changing the volume on t
 
 ## Planning
 
-So it begins. I started by writing down the issues and how to fix them, then I thought about how to automate these fixes. In terms of coding experience, I have some with Python and Flask, but I heard about FastAPI, which is a modern asynchronous web framework, and I wanted to try it out. On the front-end, I only knew HTML and CSS, no JavaScript (which later I found out its useful), but I found [HTMX](https://htmx.org/), a library that allows you to write dynamic webapp using HTML attributes.
+So it begins. I started by writing down the issues and how to fix them, then I thought about how to automate these fixes. In terms of coding experience, I have some with Python and Flask, but I heard about FastAPI, which is a modern asynchronous web framework, and I wanted to try it out. On the front-end, I only knew HTML and CSS, no JavaScript (which I later found useful), but I found [HTMX](https://htmx.org/), a library that allows you to write dynamic webapp using HTML attributes.
 
 I've also gathered the resources I have when it comes to APIs and automation:
 
@@ -249,7 +249,7 @@ But not in my case of ffmpeg. I could implement my own async subprocess calls, b
 ```
 ### ffmpeg Continued
 
-However, ffmpeg didn't work as expected. It turns out the package maintainer's ffmpeg is too old and it doesn't support Dolby Vision profiles and Dolby atmos, but I found a [precomplied version](https://johnvansickle.com/ffmpeg/) that is newer, I manually extracted it to `/usr/local/bin` and it works. I just need to make a note when building Docker image.
+However, ffmpeg didn't work as expected. It turns out the package maintainer's ffmpeg is too old and it doesn't support Dolby Vision profiles and Dolby atmos, but I found a [precompiled version](https://johnvansickle.com/ffmpeg/) that is newer, I manually extracted it to `/usr/local/bin` and it works. I just need to make a note when building Docker image.
 ![Terminal showing the ffmpeg installation used by the project](/static/images/htpc-troubleshooter/2025-05-28-22-49-46.webp)
 
 ### AudioCodecs
@@ -264,7 +264,7 @@ mapping = {
     "dts": {"aliases": ["dts", "dts-hd ma", "dtshd-ma"], "score": 60},
 }
 ```
-Dataclasses allow me to access Python comparison operators and sorting based on its score. For instance, a file could have multiple audio tracks like commentary or compatibility tracks, but by default the player should choose the best track, I can easily implement it by `max()` function on the list of `AudioCodec` instiantiated by ffmpeg. I also implemented the `__lt__` method to allow comparison based on score, so in my main file, I can use `receiver_ac < src_ac` to determine whether the box is outputting the correct codec to the receiver.
+Dataclasses allow me to access Python comparison operators and sorting based on its score. For instance, a file could have multiple audio tracks like commentary or compatibility tracks, but by default the player should choose the best track, I can easily implement it by `max()` function on the list of `AudioCodec` instantiated by ffmpeg. I also implemented the `__lt__` method to allow comparison based on score, so in my main file, I can use `receiver_ac < src_ac` to determine whether the box is outputting the correct codec to the receiver.
 ```python
 @dataclass(order=False)
 class AudioCodec:
@@ -277,7 +277,7 @@ class AudioCodec:
 
 ### HTMX
 
-HTMX lets you build dynamic web apps using HTML attributes, making AJAX requests and updating the DOM. It supports loading indicators and server-sent events with minimal efforts. I also used the `HX-Redirect` header to handle backend redirects based on logic, such astaking different paths based on the media codec. Here’s an example; there are many HTMX features I didn’t use in this project.
+HTMX lets you build dynamic web apps using HTML attributes, making AJAX requests and updating the DOM. It supports loading indicators and server-sent events with minimal effort. I also used the `HX-Redirect` header to handle backend redirects based on logic, such as taking different paths based on the media codec. Here’s an example; there are many HTMX features I didn’t use in this project.
 
 ```html
 <a class="button" hx-get="/example" hx-indicator="#spinner">
@@ -316,7 +316,7 @@ I also added interactivity to the documentation site, since my API is served fro
 
 ### Cloudflare Pages
 
-I want the documentation site to function in abscence of FastAPI, I initially tried deploying it to Github Pages, but because of my strict base URL, it wouldn't work. However, I found that [Cloudflare Pages](https://pages.cloudflare.com/) support static sites with a custom path. I created a new repository `htpc-troubleshooter-support`, built the site to the `gh-pages` branch, and have Cloudflare Pages monitor for changes. Since my home page is in `/support`, I added a custom `index.html` at the root of `gh-pages`, which redirects to `/support`.
+I want the documentation site to function in the absence of FastAPI, I initially tried deploying it to GitHub Pages, but because of my strict base URL, it wouldn't work. However, I found that [Cloudflare Pages](https://pages.cloudflare.com/) support static sites with a custom path. I created a new repository `htpc-troubleshooter-support`, built the site to the `gh-pages` branch, and have Cloudflare Pages monitor for changes. Since my home page is in `/support`, I added a custom `index.html` at the root of `gh-pages`, which redirects to `/support`.
 
 The documentation site is now live at [htpc-troubleshooter-support.pages.dev/support](https://htpc-troubleshooter-support.pages.dev/support).
 ![Documentation site deployed on Cloudflare Pages](/static/images/htpc-troubleshooter/2025-05-28-14-35-00.webp)
@@ -351,20 +351,20 @@ am start -a android.intent.action.VIEW -d file:///sdcard/Pictures/htpc-error.png
 ![Android error message displayed by the troubleshooter](/static/images/htpc-troubleshooter/2025-05-28-15-25-54.webp)
 ### Why is there JavaScript?
 
-You may notice there are [Javascript](https://github.com/vttc08/htpc-troubleshooter/blob/db803cc3fd286f98620756198f9df663d242e354/templates/post-reboot.html#L44) even though I mentioned I didn't know any. Well, I learned some JavaScript while studying at BCIT, and I think it's very useful in web development. It might even be possible to rewrite the entire app in JavaScript while only having FastAPI as a CORS proxy that inject Authorization header to the requests, but I went this far into the project, it's not a wise idea to restart. HTMX actually have JavaScript events which I could listen such as when server sent events are finished, and I implmented callbacks to handle these events.
+You may notice there is [JavaScript](https://github.com/vttc08/htpc-troubleshooter/blob/db803cc3fd286f98620756198f9df663d242e354/templates/post-reboot.html#L44) even though I mentioned I didn't know any. Well, I learned some JavaScript while studying at BCIT, and I think it's very useful in web development. It might even be possible to rewrite the entire app in JavaScript while only having FastAPI as a CORS proxy that inject Authorization header to the requests, but I went this far into the project, it's not a wise idea to restart. HTMX has JavaScript events I could listen for, such as when server-sent events finish, and I implemented callbacks to handle these events.
 ```js
 document.addEventListener("htmx:sseClose", function (event) {})
 ```
 
 ## No Chinese Subtitles
 
-This isn't a feature I want to implement, but it's probably the most needed one. When importing movies, I always have extensive QC checks on subtitles, such as whether the subtitles are in Chinese, synced, multiple languages and no ads, I have a [dedicated repo](https://github.com/vttc08/movie-renamer) for it. However, I need to handle the edge cases. I utilized pythons `abstractmethod` and setup the folder structure in a way I could easily add new subtitle providers (even though I won't). I used [SubDL](https://subdl.com) and they provide an API with generous rate limit. I implemented a [SubDLProvider](https://github.com/vttc08/htpc-troubleshooter/blob/db803cc3fd286f98620756198f9df663d242e354/libs/subtitles/subdl.py#L8) class that handles the API searches, downloads and processing (extracting archive), with temporary storage in `/tmp`.
+This isn't a feature I want to implement, but it's probably the most needed one. When importing movies, I always have extensive QC checks on subtitles, such as whether the subtitles are in Chinese, synced, multiple languages and no ads, I have a [dedicated repo](https://github.com/vttc08/movie-renamer) for it. However, I need to handle the edge cases. I utilized Python’s `abstractmethod` and set up the folder structure in a way I could easily add new subtitle providers (even though I won't). I used [SubDL](https://subdl.com) and they provide an API with generous rate limit. I implemented a [SubDLProvider](https://github.com/vttc08/htpc-troubleshooter/blob/db803cc3fd286f98620756198f9df663d242e354/libs/subtitles/subdl.py#L8) class that handles the API searches, downloads and processing (extracting archive), with temporary storage in `/tmp`.
 
 Instead of moving the files via filesystem, I used the Jellyfin API to upload the subtitles, this allows my media directory mount as read-only in Docker `-v /mnt/data/Movies:/movies:ro`, minimizing the risk of errors. I added a method to take the subtitle path, encode it to base64 and upload it to Jellyfin, which will be immediately available in the media library.
 
 ## Unimplemented and Other Features
 
-I did not implement Wrong Color and Subtitle Out of Sync. The first one refers to Dolby Vision profile 5, where the colors are green/purple tint. This only occurs on Windows when players incorrectly configured, since I don't except my parents to configure players, this will not happen. Similarly for Subtitle Out of Sync, there is [ffsubsync](https://github.com/smacke/ffsubsync) but this issue almost never occurs and I don't want to spend more time implementing it.
+I did not implement Wrong Color and Subtitle Out of Sync. The first one refers to Dolby Vision profile 5, where the colors are green/purple tint. This only occurs on Windows when players incorrectly configured, since I don't expect my parents to configure players, this will not happen. Similarly for Subtitle Out of Sync, there is [ffsubsync](https://github.com/smacke/ffsubsync) but this issue almost never occurs and I don't want to spend more time implementing it.
 
 I also tried adding WebSocket support. It would be useful to be able to view and control the status of TV/receiver/HBR4K+ in real-time. I even had working code using `asyncws` to connect to Home Assistant WebSocket and convert it to FastAPI WebSocket. I noticed while debug logging, I'm receiving a lot of messages, because HA sends updates of ALL my devices. Suppressing the logs won't change the fact that the message is still sent and WS remains open. This is not a problem for official Home Assistant which runs on client side which disconnect on browser close. But mine runs on server side, which is always open, increasing both the load of this and the HA server. Additionally, if I wanted that functionality, I could create a simple HA dashboard and use one line of HTML `<a>` to link to it or use an iframe.
 
@@ -391,7 +391,7 @@ docker run --rm -it --name hugo -v ./support:/static hugo hugo build --baseURL h
 ![Docker and Hugo deployment setup for the documentation site](/static/images/htpc-troubleshooter/2025-05-29-13-19-30.webp)
 ## We have integration testing at home...
 
-Mom, can we have proper integration testing with pytest and Github Actions CI? No, we have integration testing at home.
+Mom, can we have proper integration testing with pytest and GitHub Actions CI? No, we have integration testing at home.
 ![Home theater test media used for integration testing](/static/images/htpc-troubleshooter/2025-05-28-16-24-57.webp)
 
 The tight integration of my home theater makes integration testing difficult. I still provided some "test cases" to specifically test the features regarding audio codecs. This is demonstrated from the video at the beginning. Instead of writing the tests in code, I created a test media with various formats.

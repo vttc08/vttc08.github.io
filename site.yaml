@@ -1,7 +1,7 @@
 - slug: "find-my-force"
   title: "Find My Force - Red Team Hackathon 2026"
   description: >-
-    Our team built **Find My Force**, a real-time RF detection, classification, and geolocation system powered by semi-supervised machine learning, RSSI, IQ data and TDoA. The results were processed by Flask and SocketIO backend and streamed to a web dashboard using React and Leaflet map. I was responsible for bringing together the ML model, geolocation algorithm, data parsing and the frontend. Despite working with unfamiliar technologies, our team adapter quickly and worked closely to deliver a cohesive solution.
+    Our team built **Find My Force**, a real-time RF detection, classification, and geolocation system powered by semi-supervised machine learning, RSSI, IQ data and TDoA. The results were processed by a Flask and Socket.IO backend and streamed to a web dashboard using React and a Leaflet map. I was responsible for bringing together the ML model, geolocation algorithm, data parsing and the frontend. Despite working with unfamiliar technologies, our team adapted quickly and worked closely to deliver a cohesive solution.
   category: "Development"
   type: "🏆 1st Place Hackathon Winner"
   tags: ["Python", "Flask", "React", "Leaflet", "Machine Learning", "Hackathon"]
@@ -18,14 +18,14 @@
 - slug: "clarity-index"
   title: "Clarity Index 360"
   description: >-
-    I worked with a team of BCIT students on a [BCIT ISSP (Industry Sponsored Student Project)](https://www.bcit.ca/computing-academic-studies/industry-sponsored-student-projects/), focusing on 360 leadership assessment, built with React and Firebase. This application replaced manual Excel macro based workflow. I focused on Chart.js vsualization, data processing and client-side PDF report generation. I participated in weekly sponsor meetings to translate business requirements into technical solution and helped present the final product at the expo, where our team won first place.
+    I worked with a team of BCIT students on a React and Firebase application for 360-degree leadership assessment through a [BCIT ISSP (Industry Sponsored Student Project)](https://www.bcit.ca/computing-academic-studies/industry-sponsored-student-projects/). This application replaced a manual workflow based on Excel macros. I focused on Chart.js visualization, data processing and client-side PDF report generation. I participated in weekly sponsor meetings to translate business requirements into technical solutions and helped present the final product at the expo, where our team won first place.
   category: "Development"
   type: "🏆 1st Place BCIT ISSP Winner"
   tags: ["React", "Firebase", "Chart.js", "Project Management"]
   url: "https://lnkd.in/p/gbr8J2u8"
   images:
     - url: "/static/images/linkedin-issp.webp"
-      alt: "Linkedin post image from BCIT"
+      alt: "LinkedIn post image from BCIT"
     - url: "/static/images/issp.webp"
       alt: "ISSP Homepage"
   start_date: 2026-01-01
@@ -36,11 +36,11 @@
 - slug: "insta-v2ray"
   title: "Insta-V2Ray"
   description: >-
-    I've built [Insta-V2Ray](https://github.com/vttc08/insta-v2ray), a Python full-stack application that enables remote access behind CG-NAT, using tunnel providers like Cloudalre, Pinggy and Zrok to provide a DPI resistant websocket tunnel. The application manages tunnel subprocesses concurrently, parses URLs and generate customized V2Ray subscriptions. I used inheritance, polymorphism and encapsulation to create a modular and maintainable codebase. Although I no longer rely on it personally, the project significantly strenghened my understanding of networking and Python OOP, which was helpful in my education. 
+    I've built [Insta-V2Ray](https://github.com/vttc08/insta-v2ray), a Python full-stack application that enables remote access behind CG-NAT, using tunnel providers like Cloudflare, Pinggy and zrok to provide WebSocket tunnels. The application manages tunnel subprocesses concurrently, parses URLs and generates customized V2Ray subscriptions. I used inheritance, polymorphism and encapsulation to create a modular and maintainable codebase. Although I no longer rely on it personally, the project significantly strengthened my understanding of networking and Python OOP, which was helpful in my education.
   category: "Development"
-  url: "/post/insta-v2ray"
+  url: "https://github.com/vttc08/insta-v2ray"
   type: "Python Flask Application"
-  tags: ["Python", "Flask", "Websocket", "OOP", "Jinja", "V2Ray", "CG-NAT"]
+  tags: ["Python", "Flask", "WebSocket", "OOP", "Jinja", "V2Ray", "CG-NAT"]
   images:
     - url: "/static/images/iv2ray1.webp"
       alt: "Insta-V2Ray Screenshot"
@@ -52,7 +52,7 @@
 - slug: "htpc-troubleshooter"
   title: "HTPC Troubleshooter"
   description: >-
-    Instead of spending 5 minutes with technical support, I developed a multilingual full-stack FastAPI webapp while learning new framework and technologies. It integrates with Jellyfin, Home Assistant, ffmpeg and onkyo-eiscp to diagnose and propose solutions for media playback issues that my parents encounter. HTMX and SSE provide a user-friendly interface with live troubleshooting updates, while a bundled Hugo site provides documentation. This months-long learning experience strengthened my web development skills and solved a practical problem for my family. 
+    Instead of spending 5 minutes with technical support, I developed a multilingual full-stack FastAPI web app while learning new frameworks and technologies. It integrates with Jellyfin, Home Assistant, ffmpeg and onkyo-eiscp to diagnose and propose solutions for media playback issues that my parents encounter. HTMX and SSE provide a user-friendly interface with live troubleshooting updates, while a bundled Hugo site provides documentation. This months-long learning experience strengthened my web development skills and solved a practical problem for my family.
   category: "Development"
   url: "/post/htpc-troubleshooter"
   type: "Python FastAPI Application"
@@ -66,3 +66,148 @@
       alt: "HTPC Troubleshooter diagnostic tests"
   start_date: 2024-11-01
   end_date: 2025-05-31
+
+- slug: "kvm-htpc"
+  title: "KVM GPU Passthrough Home Theater VM"
+  description: >-
+    When my dad bought a 4K TV, I needed a way to play 4K HDR media with lossless audio. I repurposed my Linux home server and an RTX 2070, using QEMU/KVM with PCIe passthrough to create a Windows VM for playback, while retaining the Linux host's server functionality. Using my knowledge of AV technologies, system administration and virtualization, I was able to create a solution that met my needs using hardware I already owned, saving money.
+  category: "Homelab"
+  type: "Linux Server/Virtualization"
+  tags: ["KVM", "QEMU", "GPU Passthrough", "Virtualization", "Windows", "Linux", "Home Theater", "AV"]
+  images:
+    - url: "/static/images/htpc1.webp"
+      alt: "Internal components of the server with GPU installed."
+    - url: "/static/images/htpc2.webp"
+      alt: "VM Outputting 4K with HDR."
+    - url: "/static/images/htpc3.webp"
+      alt: "VM task manager and the specs of the host."
+  start_date: 2024-08-01
+
+- slug: "laptopserver"
+  title: "Defective Laptop Repurposed as a Linux Server"
+  description: >-
+    My Lenovo laptop has been damaged, with a broken, almost-detached screen, cracks, dead USB ports and its warranty claim denied, I repurposed it as a Linux server. I replaced the Wi-Fi card with a 2.5 GbE NIC and installed Debian, turning the remaining functional components into a low-power home server. My knowledge of computer hardware helped me get more value from it despite the severe damage. The server has been running for 2+ years without issues.
+  category: "Homelab"
+  type: "Computer Hardware"
+  tags: ["Linux", "Computer Hardware", "Server", "Debian", "Networking"]
+  images:
+    - url: "/static/images/laptop1.webp"
+      alt: "Laptop with flickering display running Debian with HDMI output to another laptop."
+    - url: "/static/images/laptop2.webp"
+      alt: "The laptop under heavy physical damage with the screen almost detached."
+    - url: "/static/images/laptop3.webp"
+      alt: "Internal components of laptop after replacing the Wi-Fi card with ethernet card."
+  start_date: 2024-05-01
+
+- slug: "personal-notes"
+  title: "Personal Notes and Documentation"
+  description: >-
+    I use Obsidian as a central knowledge base for my homelab docs, study notes and learning materials. I created Python and PowerShell scripts to publish to MkDocs, while Obsidian remains the source of truth. I also used [Quartz](https://quartz.jzhao.xyz/) to share my personal notes like a digital garden. The Quartz part has undergone a major overhaul, where I streamlined the writing and publishing workflow using Docker and CI/CD pipelines to deploy on multiple hosts.
+  category: "Development"
+  url: "https://vttc08.github.io/obsidian-notes-v2/obsidian/obsidian-publish-v2"
+  type: "Content Management"
+  tags: ["Obsidian", "Python", "MkDocs", "Quartz", "Node.js", "Docker", "CI/CD", "GitHub Actions"]
+  read_more: "Obsidian Publish V2 - My Digital Garden"
+  images:
+    - url: "/static/images/quartzfiles.webp"
+      alt: "Personal Obsidian notes publishing architecture."
+    - url: "/static/images/quartzprocess.webp"
+      alt: "Personal Obsidian notes swimlane diagram."
+  start_date: "Ongoing"
+
+- slug: "mutant-cpu"
+  title: "Intel Mutant 0000 CPU BIOS Modding"
+  description: >-
+    I experimented with BIOS modding older Intel motherboards (B150) to support newer incompatible CPUs. Using a CH341a programmer and the QTJ2 CPU, I eventually built a stable system after some trial and error. The processor provides excellent video transcoding capability and performance at low idle power. I've used this system as a desktop and now run it 24/7 as my main storage server. This experience was eye-opening and I'm glad to have taken the risk to learn and save money.
+  category: "Homelab"
+  type: "Computer Hardware"
+  tags: ["Linux", "Computer Hardware", "Server", "Debian", "Modding", "BIOS", "Motherboard", "CPU"]
+  images:
+    - url: "/static/images/cpu1.webp"
+      alt: "Intel Mutant CPU in a modded motherboard."
+    - url: "/static/images/cpu2.webp"
+      alt: "QTJ2 or Intel Genuine 0000 a modded laptop chip adapted to LGA1151."
+    - url: "/static/images/cpu3.webp"
+      alt: "Benchmark of QTJ2 similar to i7-8700K."
+  start_date: 2023-06-01
+
+- slug: "snapraid"
+  title: "SnapRAID NAS Storage"
+  description: >-
+    I've built a cost-effective SnapRAID array, allowing me to add new data drives, even Windows NTFS ones, without reformatting, and spin down inactive drives to save power. When I added another disk in 2025, it required only a simple configuration change without downtime. I also documented and tested recovery scenarios to prepare for failure. Instead of following the masses, I deployed a power-efficient and flexible solution tailored to my needs.
+  category: "Homelab"
+  type: "NAS Storage"
+  tags: ["Linux", "HDD", "Server", "SnapRAID", "NAS", "filesystem", "Computer Hardware"]
+  images:
+    - url: "/static/images/snapraid1.webp"
+      alt: "Picture of my NAS server with 3 drives."
+    - url: "/static/images/snapraid2.webp"
+      alt: "Picture of my NAS server after adding drives."
+  start_date: 2024-05-01
+
+- slug: "sci-201"
+  title: "Effect of CPU C-State on Idle Power"
+  description: >-
+    CPUs enter C-states when idle to operate in low-power modes. I was interested in this topic and saving power for my home server, so I took the opportunity in [SCI 201](https://apps.ualberta.ca/catalogue/course/sci/201) at my university to perform an experiment to measure how C-states affect idle power consumption. I used a smart power meter, Home Assistant and InfluxDB for data collection and used pandas, R and matplotlib to summarize and present the data in a formal report.
+  category: "Development"
+  url: "https://github.com/vttc08/sci-201-cpu-c-states/releases/tag/report"
+  read_more: "Download the research paper and data."
+  type: "Statistics Research Project"
+  tags: ["Python", "R", "Statistics", "Data Analysis", "Home Assistant", "InfluxDB"]
+  images:
+    - url: "/static/images/cstate1.webp"
+      alt: "Presentation title image."
+    - url: "/static/images/cstate2.webp"
+      alt: "Scatterplot of CPU C-states result."
+    - url: "/static/images/cstate3.webp"
+      alt: "Bar chart of CPU C-states result."
+  start_date: 2024-05-01
+
+- slug: "oracle-vps"
+  title: "Oracle Cloud VPS Tunneling"
+  description: >-
+    On campus, the restricted network prevented me from forwarding ports. To allow my parents to stream Jellyfin or my friend to play Minecraft, I used [Oracle Cloud free tier](https://www.oracle.com/cloud/free/) and [Tailscale](https://tailscale.com/) to create a mesh network, with an Nginx reverse proxy to route different services. My clients were able to access these services without any issues. Exploring tunneling solutions allowed me to adapt to the limitations of any networks while still providing services at no cost.
+  category: "Homelab"
+  type: "Cloud Infrastructure"
+  tags: ["Linux", "Cloud", "Oracle Cloud", "Tailscale", "Caddy", "Nginx", "Reverse Proxy"]
+  images:
+    - url: "/static/images/oracle1.webp"
+      alt: "Two Minecraft servers where one is tunneled via Tailscale."
+    - url: "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1hy2zwl6yi0ws1ksai4x.png"
+      alt: "Example image of Tailscale and Oracle free compute."
+  start_date: 2023-03-01
+
+- slug: "vttc"
+  title: "Verbose the Talking Cat"
+  description: >-
+    Verbose the Talking Cat is my YouTube channel featuring [comedic stickman animation videos that amassed 20,000 subscribers and 7 million total views](https://www.famousbirthdays.com/people/kevin-hu.html). The content of the channel includes stickman animation; the protagonist of a youth that is relatable to many young viewers who plays video games but encounter various challenges such as school, parents, and friends. The channel was discontinued after I decided I want to study at university with high course load.
+  category: "Media"
+  url: "https://youtube.com/verbosethetalkingcat"
+  read_more: "Subscribe"
+  type: "YouTube Channel"
+  tags: ["YouTube", "Video Production", "Animation", "Media"]
+  images:
+    - url: "/static/images/vttc.webp"
+      alt: "Verbose the Talking Cat channel logo."
+    - url: "/static/images/vttc2.webp"
+      alt: "Thumbnail of a video from the Verbose the Talking Cat channel."
+  start_date: 2016-09-01
+  end_date: 2020-08-31
+
+- slug: "video-production"
+  title: "Video Production Side Projects"
+  description: >-
+    Over the course of my time creating content, I've produced various videos for school and personal projects. For example, I directed, filmed and edited a [Chemistry Music Video Parody](https://www.youtube.com/watch?v=OQ4ead_ea5s) with 20+ students and teachers at my high school. I also produced a [zombie apocalypse video for a botany course](https://www.youtube.com/watch?v=1RBjZTJs2fs). Other projects include [motion typography](https://www.youtube.com/watch?v=U9bBlx7dsRM), [educational animation](https://www.youtube.com/watch?v=V_XMzUfMqfI) and a [VFX reel](https://www.youtube.com/watch?v=DKzEezt4nsY). These projects strengthened my skills in video production, editing, animation and storytelling.
+  category: "Media"
+  url: "https://verbosettcvideos.weebly.com/school-projects.html"
+  read_more: "You can read about all my projects here."
+  type: "YouTube Channel"
+  tags: ["YouTube", "Video Production", "Animation", "Media"]
+  images:
+    - url: "/static/images/labguy.webp"
+      alt: "Lab Guy music video Ms. Kim, Kimistry."
+    - url: "/static/images/bot380.webp"
+      alt: "Zombie apocalypse video for a botany course."
+    - url: "/static/images/kinetictypography.webp"
+      alt: "Maroon 5 Sugar kinetic typography video."
+  start_date: "Ongoing"
