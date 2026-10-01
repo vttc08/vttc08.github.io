@@ -34,8 +34,8 @@ class XCarousel extends HTMLElement {
                 /* Hide scrollbar */
                 scrollbar-width: none;
 
-                /* Better touch behavior */
-                touch-action: pan-x;
+                /* Allow horizontal gallery swipes and vertical page scrolling. */
+                touch-action: auto;
                 overscroll-behavior-x: contain;
             }
 
