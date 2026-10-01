@@ -170,6 +170,7 @@
   category: "Homelab"
   type: "Cloud Infrastructure"
   tags: ["Linux", "Cloud", "Oracle Cloud", "Tailscale", "Caddy", "Nginx", "Reverse Proxy"]
+  url: "/post/oracle-vps"
   images:
     - url: "/static/images/oracle1.webp"
       alt: "Two Minecraft servers where one is tunneled via Tailscale."
