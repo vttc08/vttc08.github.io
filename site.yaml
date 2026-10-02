@@ -137,6 +137,7 @@
     I've built a cost-effective SnapRAID array, allowing me to add new data drives, even Windows NTFS ones, without reformatting, and spin down inactive drives to save power. When I added another disk in 2025, it required only a simple configuration change without downtime. I also documented and tested recovery scenarios to prepare for failure. Instead of following the masses, I deployed a power-efficient and flexible solution tailored to my needs.
   category: "Homelab"
   type: "NAS Storage"
+  url: "/post/snapraid"
   tags: ["Linux", "HDD", "Server", "SnapRAID", "NAS", "filesystem", "Computer Hardware"]
   images:
     - url: "/static/images/snapraid1.webp"
