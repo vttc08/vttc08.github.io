@@ -24,6 +24,12 @@ article {
   margin-inline: auto;
 }
 
+.youtube {
+  display: block;
+  margin: 1rem;
+  max-width: 100%;
+  height: auto;
+}
 /* Table of Content */
 
 .toc {
@@ -205,6 +211,15 @@ video {
 
 video {
   display: block;
+  margin: 1.5rem 0;
+}
+
+iframe.youtube {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
   margin: 1.5rem 0;
 }
 
