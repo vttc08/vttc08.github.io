@@ -121,6 +121,7 @@
     I experimented with BIOS modding older Intel motherboards (B150) to support newer incompatible CPUs. Using a CH341a programmer and the QTJ2 CPU, I eventually built a stable system after some trial and error. The processor provides excellent video transcoding capability and performance at low idle power. I've used this system as a desktop and now run it 24/7 as my main storage server. This experience was eye-opening and I'm glad to have taken the risk to learn and save money.
   category: "Homelab"
   type: "Computer Hardware"
+  url: "/post/mutant-cpu"
   tags: ["Linux", "Computer Hardware", "Server", "Debian", "Modding", "BIOS", "Motherboard", "CPU"]
   images:
     - url: "/static/images/cpu1.webp"
