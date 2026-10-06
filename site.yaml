@@ -89,6 +89,7 @@
     My Lenovo laptop has been damaged, with a broken, almost-detached screen, cracks, dead USB ports and its warranty claim denied, I repurposed it as a Linux server. I replaced the Wi-Fi card with a 2.5 GbE NIC and installed Debian, turning the remaining functional components into a low-power home server. My knowledge of computer hardware helped me get more value from it despite the severe damage. The server has been running for 2+ years without issues.
   category: "Homelab"
   type: "Computer Hardware"
+  url: "/post/laptopserver"
   tags: ["Linux", "Computer Hardware", "Server", "Debian", "Networking"]
   images:
     - url: "/static/images/laptop1.webp"
