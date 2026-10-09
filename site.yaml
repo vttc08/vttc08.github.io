@@ -73,6 +73,7 @@
     When my dad bought a 4K TV, I needed a way to play 4K HDR media with lossless audio. I repurposed my Linux home server and an RTX 2070, using QEMU/KVM with PCIe passthrough to create a Windows VM for playback, while retaining the Linux host's server functionality. Using my knowledge of AV technologies, system administration and virtualization, I was able to create a solution that met my needs using hardware I already owned, saving money.
   category: "Homelab"
   type: "Linux Server/Virtualization"
+  url: "/post/kvm-htpc"
   tags: ["KVM", "QEMU", "GPU Passthrough", "Virtualization", "Windows", "Linux", "Home Theater", "AV"]
   images:
     - url: "/static/images/htpc1.webp"
