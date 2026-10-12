@@ -1,3 +1,23 @@
+- slug: "dmkaraoke"
+  title: "Demucs Karaoke App"
+  description: >-
+    I wanted to build a karaoke application using Demucs and WhisperX since discovering these technologies in 2022. With the rise of agentic AI development, I finally built DMKaraoke, using GitHub Copilot and Codex, now running in production. The FastAPI app consists of a lightweight main application that manages the queue and songs with a microservice handling GPU-intensive vocal separation and lyrics alignment. Beyond the application itself, I developed an agentic workflow that lets me continue coding and managing the project on my phone during my commute.
+  category: "Development"
+  url: "/post/dmkaraoke"
+  type: "Python FastAPI AI Karaoke"
+  tags: ["Python", "FastAPI", "Demucs", "WhisperX", "SSE", "WebSockets", "ffmpeg", "API", "AI", "Machine Learning"]
+  images:
+    - url: "/static/images/dmkaraoke.webp"
+      alt: "DMKaraoke banner"
+    - url: "https://demucs-karaoke-app.pages.dev/assets/images/queuepage.gif"
+      alt: "DMKaraoke queue page"
+    - url: "https://demucs-karaoke-app.pages.dev/assets/images/media/create.gif"
+      alt: "DMKaraoke create AI karaoke from existing media"
+    - url: "https://demucs-karaoke-app.pages.dev/assets/images/stage/customization.gif"
+      alt: "DMKaraoke stage customization"
+  start_date: 2026-04-01
+  end_date: 2026-09-30
+
 - slug: "find-my-force"
   title: "Find My Force - Red Team Hackathon 2026"
   description: >-
