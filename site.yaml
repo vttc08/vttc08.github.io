@@ -73,24 +73,6 @@
   featured: true
   read_more: "BCIT Computing LinkedIn Post"
 
-- slug: "insta-v2ray"
-  title: "Insta-V2Ray"
-  description: >-
-    I've built [Insta-V2Ray](https://github.com/vttc08/insta-v2ray), a Python full-stack application that enables remote access behind CG-NAT, using tunnel providers like Cloudflare, Pinggy and zrok to provide WebSocket tunnels. The application manages tunnel subprocesses concurrently, parses URLs and generates customized V2Ray subscriptions. I used inheritance, polymorphism and encapsulation to create a modular and maintainable codebase. Although I no longer rely on it personally, the project significantly strengthened my understanding of networking and Python OOP, which was helpful in my education.
-  category: "Development"
-  url: "https://github.com/vttc08/insta-v2ray"
-  type: "Python Flask Application"
-  tags: ["Python", "Flask", "WebSocket", "OOP", "Jinja", "V2Ray", "CG-NAT"]
-  images:
-    - url: "/static/images/iv2ray3.webp"
-      alt: "Insta-V2Ray logo image"
-    - url: "/static/images/iv2ray1.webp"
-      alt: "Insta-V2Ray Screenshot"
-    - url: "/static/images/iv2ray2.webp"
-      alt: "Insta-V2Ray Architecture"
-  start_date: 2025-05-01
-  end_date: 2025-08-31
-
 - slug: "htpc-troubleshooter"
   title: "HTPC Troubleshooter"
   description: >-
@@ -144,6 +126,24 @@
     - url: "/static/images/laptop3.webp"
       alt: "Internal components of laptop after replacing the Wi-Fi card with ethernet card."
   start_date: 2024-05-01
+
+- slug: "insta-v2ray"
+  title: "Insta-V2Ray"
+  description: >-
+    I've built [Insta-V2Ray](https://github.com/vttc08/insta-v2ray), a Python full-stack application that enables remote access behind CG-NAT, using tunnel providers like Cloudflare, Pinggy and zrok to provide WebSocket tunnels. The application manages tunnel subprocesses concurrently, parses URLs and generates customized V2Ray subscriptions. I used inheritance, polymorphism and encapsulation to create a modular and maintainable codebase. Although I no longer rely on it personally, the project significantly strengthened my understanding of networking and Python OOP, which was helpful in my education.
+  category: "Development"
+  url: "https://github.com/vttc08/insta-v2ray"
+  type: "Python Flask Application"
+  tags: ["Python", "Flask", "WebSocket", "OOP", "Jinja", "V2Ray", "CG-NAT"]
+  images:
+    - url: "/static/images/iv2ray3.webp"
+      alt: "Insta-V2Ray logo image"
+    - url: "/static/images/iv2ray1.webp"
+      alt: "Insta-V2Ray Screenshot"
+    - url: "/static/images/iv2ray2.webp"
+      alt: "Insta-V2Ray Architecture"
+  start_date: 2025-05-01
+  end_date: 2025-08-31
 
 - slug: "personal-notes"
   title: "Personal Notes and Documentation"
