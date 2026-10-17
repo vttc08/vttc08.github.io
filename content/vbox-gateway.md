@@ -18,8 +18,6 @@ In September 2025, my college friend told me about his cruise, and his mom had t
 
 In addition, r/Tailscale discussions [1](https://www.reddit.com/r/Tailscale/comments/1p2rra2/carnival_cruises_vs_tailscale/), [2](https://www.reddit.com/r/Tailscale/comments/1i6wjfn/ncl_cruise_ship_with_starlink_blocking_tailscale/) extensively discussed cruise ships blocking website access. Losing access to my homelab is not acceptable for me.
 
-![xkcd meme devotion to duty](https://imgs.xkcd.com/comics/devotion_to_duty.png)
-
 Website restrictions weren't new to me. I already self-hosted VLESS proxies over WebSockets and TLS, sometimes through a CDN, the exact setup Chinese and Russian users use in their regime, and the traffic mimics normal HTTPS traffic. But sharing one Wi-Fi subscription across multiple devices presented a different challenge.
 
 ## Problem Statement
