@@ -1,3 +1,23 @@
+- slug: "vbox-gateway"
+  title: "VirtualBox Wi-Fi Gateway for a Cruise Ship"
+  description: >-
+    To share expensive cruise Wi-Fi with my family while accessing my homelab and working remotely, I built a virtualized Wi-Fi hotspot gateway using VirtualBox, Kali Linux and USB passthrough. The setup combines host-only networking, transparent proxying, FakeIP and V2RayN routing through encrypted VLESS tunnels to address potential hotspot detection and network restrictions. After weeks of configuring Wi-Fi, routing and DNS, the system works but it's overengineered, the hypothetical restrictions and detection methods were not present.
+  category: "Homelab"
+  url: "/post/vbox-gateway"
+  type: "Networking and Virtualization"
+  tags: ["VirtualBox", "Kali Linux", "Networking", "Wi-Fi", "USB Passthrough", "VLESS", "DNS", "sing-box", "nftables", "Python"]
+  images:
+    - url: "/static/images/vboxgateway1.webp"
+      alt: "VirtualBox Wi-Fi Gateway banner"
+    - url: "/static/images/vboxgateway2.webp"
+      alt: "VirtualBox Wi-Fi Gateway physical architecture"
+    - url: "/static/images/network_traffic_animated_fast.svg"
+      alt: "VBox Gateway logical network architecture"
+    - url: "/static/images/vboxgateway3.webp"
+      alt: "Kali Linux and V2RayN on MSI Laptop"
+  start_date: 2026-07-01
+  end_date: 2026-08-31
+
 - slug: "dmkaraoke"
   title: "Demucs Karaoke App"
   description: >-
