@@ -125,7 +125,7 @@ def check_image(image_url):
         if not image_path.exists() or not image_path.is_file() or image_path.stat().st_size == 0:
             logger.error(f"Image {image_url} is invalid.")
             return False
-        elif not image_url.endswith(('.webp', '.gif')):
+        elif not image_url.endswith(('.webp', '.gif', '.svg')):
             logger.warning(f"Image {image_url} not converted to webp.")
             return False
         elif image_path.stat().st_size > 500 * 1024:
