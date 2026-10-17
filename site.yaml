@@ -82,6 +82,8 @@
   type: "Python Flask Application"
   tags: ["Python", "Flask", "WebSocket", "OOP", "Jinja", "V2Ray", "CG-NAT"]
   images:
+    - url: "/static/images/iv2ray3.webp"
+      alt: "Insta-V2Ray logo image"
     - url: "/static/images/iv2ray1.webp"
       alt: "Insta-V2Ray Screenshot"
     - url: "/static/images/iv2ray2.webp"
@@ -98,6 +100,8 @@
   type: "Python FastAPI Application"
   tags: ["Python", "FastAPI", "HTMX", "SSE", "Hugo", "Docker", "ffmpeg", "API", "adb"]
   images:
+    - url: "/static/images/htpc.webp"
+      alt: "HTPC Troubleshooter main banner"
     - url: "/static/images/htpcdemo.webp"
       alt: "HTPC Troubleshooter main interface"
     - url: "/static/images/htpcdocs.webp"
@@ -183,10 +187,10 @@
   url: "/post/snapraid"
   tags: ["Linux", "HDD", "Server", "SnapRAID", "NAS", "filesystem", "Computer Hardware"]
   images:
+    - url: "/static/images/snapraid2.webp"
+      alt: "Picture of my NAS server with 4 drives and Fractal Design case."
     - url: "/static/images/snapraid1.webp"
       alt: "Picture of my NAS server with 3 drives."
-    - url: "/static/images/snapraid2.webp"
-      alt: "Picture of my NAS server after adding drives."
   start_date: 2024-05-01
 
 - slug: "sci-201"
