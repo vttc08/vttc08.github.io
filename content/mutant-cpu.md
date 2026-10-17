@@ -23,9 +23,7 @@ It is worth briefly explaining why video transcoding mattered so much for this p
 
 [Jellyfin](https://jellyfin.org/), a self-hosted media streaming server, can convert a media file to different formats and resolutions on the fly, so that it can be played on a device where it doesn't support the original format, without the need to pre-convert the media file. This is useful when the client device cannot directly play the original file.
 
-I am very particular about video quality and I ensure all my devices can direct play all videos without any quality loss, especially on a large TV. I'm not interested in this aspect.
-
-However, transcoding is needed to stream over low bandwidth connections. If the internet upload is 10Mbps, it's physically impossible to stream a video at 20Mbps (unless you want to spend twice the time watching the thing). Period.
+I am very particular about video quality and I ensure all my devices can direct play all videos without any quality loss, especially on a large TV. However, transcoding is needed to stream over low bandwidth connections. If the internet upload is 10Mbps, it's physically impossible to stream a video at 20Mbps (unless you want to spend twice the time watching the thing). Period.
 
 In [oracle-vps](oracle-vps), I used my RTX 2070 to transcode movies down to around 10 Mbps so my parents could stream reliably. Back in 2023, my home internet had only around 15 Mbps of upload bandwidth, so if I wanted to leave my media home and stream from my dorm, transcoding was essential.
 
@@ -83,9 +81,7 @@ The system included
 - 600W power supply
 - case with hot-pluggable drive bays and plenty of SATA cables
 
-The B250 Pro4 met the requirements for the mutant CPU, and the AliExpress seller confirmed he had a modified BIOS for it.
-
-The 6th gen i5 and 8GB RAM didn't matter to me; I could sell the i5 later and I already had 32GB available for the summer and planned to purchase 16GB later when the machine became a dedicated server.
+The B250 Pro4 met the requirements for the mutant CPU, and the AliExpress seller confirmed he had a modified BIOS for it. The 6th gen i5 and 8GB RAM didn't matter to me; I could sell the i5 later and I already had 32GB available for the summer and planned to purchase 16GB later when the machine became a dedicated server.
 
 Rather than assembling everything from individual parts, buying a complete working system gave me almost the entire hardware platform I needed in one go.
 
@@ -94,6 +90,8 @@ Rather than assembling everything from individual parts, buying a complete worki
 The system was working well with the original i5-6500. Then the QTJ2 and CH341A programmer arrived and I was ready to mod the BIOS. The BIOS chip is SOP8, which is tedious to flash. I had to use a clip that came with the programmer.
 
 ![SOP8 clip attached to a motherboard BIOS chip](/static/images/mutant-cpu/sop8-clip.webp)
+
+This is just an example using a random motherboard, not the actual motherboard from this build.
 
 I used the [ASProgrammer](https://github.com/therealdreg/asprogrammer-dregmod) to flash the chip. It probably worked, but there's a high chance I bricked it, because after what happened next, I didn't even know whether it was done.
 
@@ -167,7 +165,7 @@ If I purchased an office SFF PC as [r/homelab](https://www.reddit.com/r/homelab)
 
 For my specific situation, a temporary computer for 4 months before the transition to a media server, the mutant CPU fit the unusual niche quite well. It's the first time where I experienced the benefits of the used market, high-risk but high-reward hardware.
 
-Before returning to Edmonton, I removed the RTX 2070, the larger SSDs, and my 32GB RAM kit. I purchased 16GB of used DDR4 for the server because it no longer needed that much memory. My dad's Lenovo PC is no longer needed, so I gave it a 128GB SSD and a GT710 GPU and called it a "gaming PC" to sell it. It was an opportunity for me to get rid of the GT710 which is basically e-waste.
+Before returning to Edmonton, I removed the RTX 2070, the larger SSDs, and my 32GB RAM kit. I purchased 16GB of used DDR4 for the server because it no longer needed that much memory. My dad's Lenovo PC is no longer needed, so I gave it a 128GB SSD and a GT710 GPU and called it a "gaming PC" to sell it. I finally got rid of the GT710 e-waste.
 
 Now that my dad upgraded our home internet, I'm confident to leave my 14TB media library at home and stream from Edmonton. The `Intel(R) Genuine 0000` lives, onto the next stage of its life in Linux. As of now, the computer has been running stably for 3+ years, hosting 56TB of hard drives in a [SnapRAID array](snapraid).
 

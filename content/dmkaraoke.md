@@ -191,9 +191,7 @@ Use a computer.
 
 Sad. I know.
 
-Fortunately, my circumstances changed in May when I started a Co-op job working mostly remote. Unlike BCIT's mandatory in-person attendance, I no longer needed to spend 3 hours commuting every day.
-
-That freed up a substantial amount of time. Right after work, I'd close my VS Code on my work computer only to open VS Code on my home computer to remote into devbox.
+Fortunately, my circumstances changed in May when I started a Co-op job working mostly remote. Unlike BCIT's mandatory in-person attendance, I no longer needed to spend 3 hours commuting every day. That freed up a substantial amount of time. Right after work, I'd close my VS Code on my work computer only to open VS Code on my home computer to remote into devbox.
 
 With a proper monitor and browser, I [redesigned the queue page](https://github.com/vttc08/demucs-karaoke-app/commit/c5ea2f525f0f58772b423fc24bf9ff894217f756) with responsive layouts, including two-column arrangements that made better use of desktop screen space. The difference was night and day.
 
@@ -365,7 +363,7 @@ I decided to use a [base class with inheritance](https://github.com/vttc08/demuc
 
 #### TTML
 
-Unfortunately, there aren’t any CPU-only alternatives, even if, WhisperX seems to perform faster and works better. TTML (Timed Text Markup Language) came to the rescue.
+Unfortunately, there aren’t any CPU-only WhisperX alternatives, even though WhisperX seems to perform faster and work better. TTML (Timed Text Markup Language) came to the rescue.
 
 While listening to some music on [monochrome](https://monochrome.tf/), I've noticed the website showed live lyrics. I opened the devtools and inspected network requests.
 
