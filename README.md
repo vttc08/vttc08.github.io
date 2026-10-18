@@ -77,3 +77,19 @@ uv run lint.py
 ```bash
 uv run compress_resume.py new_resume.pdf /static/resume.pdf
 ```
+
+## Cloudflare Pages
+
+For Cloudflare Pages, it requires specific build commands
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH="$HOME/.local/bin:$PATH" && uv sync --no-dev --no-install-project && uv run --no-dev --no-sync python build.py
+```
+
+Build output: `/public`
+
+Add the following environment variable
+
+```bash
+SKIP_DEPENDENCY_INSTALL=1
+```
