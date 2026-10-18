@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Hu</title>
+  {% include 'head.j2' %}
+</head>
+<body>
+    {% include 'header.j2' %}
+    <main>
+        <h1>Resume</h1>
+        <p><a href="/static/resume.pdf" target="_blank" rel="noopener noreferrer">Open or download my resume (PDF)</a></p>
+        <div id="desktop-only">
+          <iframe src="/static/resume.pdf" title="Resume PDF preview" style="width: 100%; height: 900px; border: 1px solid var(--border);"></iframe>
+        </div>
+        <div id="mobile-only">
+          <canvas id="pdf-preview" aria-label="Resume PDF preview" style="max-width: 100%; height: auto; border: 1px solid var(--border);"></canvas>
+        </div>
+        <div id="popup">
+          <p>You're viewing the document on a mobile device which may not support PDF preview. You can open the PDF in a new tab or download it.</p>
+          <div>
+            <a class="home-social-link" href="/static/resume.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            <a class="home-social-link" onclick="document.getElementById('popup').classList.remove('is-visible');">OK</a>
+          </div>
+        </div>
+    </main>
+    <script type="module">
+      const match = window.matchMedia("(max-width: 768px)");
+      function showPopup() {
+        const popup = document.getElementById("popup");
+        //popup.style.display = "block";
+        //popup.style.opacity = "1";
+        popup.classList.toggle("is-visible");
+      }
+      async function renderPDF() {
+        const canvas = document.getElementById("pdf-preview");
+        const status = document.getElementById("pdf-status");
+
+        canvas.addEventListener("click", () => {
+          showPopup();
+        });
+
+        canvas.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+          showPopup();
+        });
+
+        try {
+          const pdfjsLib = await import(
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.min.mjs"
+          );
+          pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.5.136/build/pdf.worker.min.mjs";
+
+          const pdf = await pdfjsLib.getDocument({ url: "/static/resume.pdf" }).promise;
+          const page = await pdf.getPage(1);
+          const viewport = page.getViewport({ scale: 1.5 });
+          const context = canvas.getContext("2d");
+
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          await page.render({ canvasContext: context, viewport }).promise;
+          status.textContent = "";
+        } catch (error) {
+          console.error("Unable to render the resume PDF", error);
+        }
+      }
+
+      if (match.matches) {
+        document.getElementById("desktop-only").style.display = "none";
+        document.getElementById("mobile-only").style.display = "block";
+        renderPDF();
+      } else {
+        document.getElementById("desktop-only").style.display = "block";
+        document.getElementById("mobile-only").style.display = "none";
+      }
+
+    </script>
+  </body>
+  {% include 'footer.j2' %}
+</html>

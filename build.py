@@ -1,0 +1,151 @@
+import logging
+import re
+import shutil
+from datetime import date, datetime
+from pathlib import Path
+
+import frontmatter
+import rcssmin
+import rjsmin
+import yaml
+from jinja2 import Environment, FileSystemLoader, exceptions
+from markupsafe import Markup
+
+import markdown
+from logging_config import configure_logging
+
+configure_logging()
+
+logger = logging.getLogger(__name__)
+
+def _minify_embedded_css(source):
+    return re.sub(
+        r"(<style>)(.*?)(</style>)",
+        lambda match: (
+            match.group(1)
+            + rcssmin.cssmin(match.group(2))
+            + match.group(3)
+        ),
+        source,
+        flags=re.DOTALL,
+    )
+
+def convert_root_templates():
+    with open("site.yaml", "r") as f:
+        site_data = yaml.safe_load(f)
+    for data in site_data:
+        data['description_html'] = Markup(markdown.markdown(data.get('description', '')))
+    env = Environment(loader=FileSystemLoader('.'))
+    for template_name in ["index.j2", "resume.j2", "posts.j2"]:
+        template_basename = Path(template_name).stem
+        template_basename = template_basename if template_basename != "index" else "home"
+        try:
+            template = env.get_template(template_name)
+            html = template.render(current_page=template_basename, projects=site_data)
+            output_filename = template_name.replace(".j2", ".html")
+            output_path = Path("public") / output_filename
+            with open(output_path, "w") as f:
+                f.write(html)
+        except exceptions.TemplateNotFound:
+            logger.error(f"Template {template_name} not found.")
+
+# Step 3: Convert markdown posts to HTML
+def convert_markdown_posts():
+    markdown_posts_dir = Path("content")
+    configs = {
+        'toc': {
+            'title': 'Table of Contents', # Add a header title above the TOC list
+            'toc_depth': '2-3',           # Only include h2 and h3 elements (skip h1)
+        }
+    }
+    for post_file in markdown_posts_dir.glob("*.md"):
+        try:
+            post = frontmatter.load(post_file)
+            toc = """
+[TOC]
+                    """
+            content = toc + "\n" + post.content
+            # Convert markdown to HTML
+            html_content = markdown.markdown(
+                content,
+                extensions=[
+                "fenced_code",
+                "codehilite",
+                "tables",
+                "toc",
+                "admonition",
+                "pymdownx.details",
+                ],
+                extension_configs=configs
+            )
+
+            # Load the post template
+            env = Environment(loader=FileSystemLoader('.'))
+            template = env.get_template('post-template.j2')
+
+            # Format the date
+            date_obj = post.get('date', 'Unknown')
+            try:
+                if isinstance(date_obj, date):
+                    pass
+                else:
+                    date_obj = datetime.fromisoformat(date_obj)
+                formatted_date = date_obj.strftime("%B %d, %Y")
+            except ValueError:
+                formatted_date = date_obj  # Use the original string if parsing fails
+
+            # Render the final HTML with the template
+            final_html = template.render(title=post.get('title', 'Untitled'), date=formatted_date, content=html_content)
+
+            # Write the final HTML to a file
+            output_filename = post_file.stem + ".html"
+            posts_dir = Path("public") / "post"
+            posts_dir.mkdir(parents=True, exist_ok=True)
+            output_path = posts_dir / output_filename
+            with open(output_path, "w") as f:
+                f.write(final_html)
+
+        except Exception as e: # noqa: BLE001
+            logger.error(f"Error processing {post_file}: {e}")
+
+# Step 4: Copy static files to the public directory
+def copy_static_files():
+    static_dir = Path("static")
+    public_dir = Path("public")
+    if static_dir.exists():
+        for static_file in static_dir.rglob("*"):
+            if static_file.name == "favicon.ico":
+                shutil.copy(static_file, public_dir / "favicon.ico")
+            elif static_file.is_file():
+                relative_path = static_file.relative_to(static_dir)
+                destination = public_dir / "static" / relative_path
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                if static_file.suffix == "css":
+                    with open(static_file, "r") as f:
+                        minified_css = rcssmin.cssmin(f.read())
+                    with open(destination, "w") as f:
+                        f.write(minified_css)
+                elif static_file.suffix == "js":
+                    with open(static_file, "r") as f:
+                        source = _minify_embedded_css(f.read())
+                        minified_js = rjsmin.jsmin(source)
+                    with open(destination, "w") as f:
+                        f.write(minified_js)
+                else:
+                    with open(static_file, "rb") as src, open(destination, "wb") as dst:
+                        dst.write(src.read())
+
+def main():
+    shutil.rmtree(Path("public"), ignore_errors=True)
+    static_dir = Path("static")
+    public_dir = Path("public")
+    for dir in [static_dir, public_dir]:
+        if not dir.exists():
+            dir.mkdir(parents=True, exist_ok=True)
+    # convert_yaml("site.yaml", Path("public") / "content.json")
+    convert_root_templates()
+    convert_markdown_posts()
+    copy_static_files()
+
+if __name__ == "__main__":
+    main()

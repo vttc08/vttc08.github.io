@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Hu</title>
+  {% include 'head.j2' %}
+</head>
+<body>
+    {% include 'header.j2' %}
+    <main>
+        <h1 class="title" id="projects">Posts and Projects</h1>
+{% from "project-card.j2" import project_card %}
+
+<section data-project-filter data-default-filter="all">
+  <nav class="project-filter" aria-label="Filter posts by category">
+    <button class="filter-button" type="button" data-filter-value="all">All</button>
+    <button class="filter-button" type="button" data-filter-value="homelab">Homelab</button>
+    <button class="filter-button" type="button" data-filter-value="development">Development</button>
+    <button class="filter-button" type="button" data-filter-value="media">Media</button>
+  </nav>
+
+  <div class="card-list">
+    {% for project in projects %}
+      {{ project_card(project) }}
+    {% endfor %}
+  </div>
+</section>
+    </main>
+</body>
+{% include 'footer.j2' %}
+</html>
