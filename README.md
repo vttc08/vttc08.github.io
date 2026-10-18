@@ -10,8 +10,8 @@ Contents are stored in `site.yaml`
   description: >-
     A short description of the project, supporting markdown, must be 420-575 characters.
   category: "either Homelab, Development or Media"
-  type: "🏆 1st Place Hackathon Winner"
-  tags: ["Python", "Flask", "React", "Leaflet", "Machine Learning", "Hackathon"]
+  type: "Type of the project"
+  tags: [""]
   url: "https://www.bcit.ca/news/stories/computing-takes-first-place/"
   images:
     - url: "/static/images/image-name.webp"
