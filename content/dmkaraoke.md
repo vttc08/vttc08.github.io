@@ -7,6 +7,10 @@ date: 2026-04-01
 
 > This post discusses more of the development tech stack and my side quest. Because vibe coding is more than sending one-shot prompts to an AI, if you want to build something actually useful.
 
+[Source Code](https://github.com/vttc08/demucs-karaoke-app) |  [Documentation](https://vttc08.github.io/demucs-karaoke-app/)
+
+
+
 ## Introduction
 
 Sometime in 2023, my friends set up a home karaoke system. One of them purchased an Android karaoke machine that allowed users to download songs from a large library. Except he paid C$600 for it. Not 600 Chinese yuan, 600 Canadian dollars. For an Android tablet that probably cost less than a hundred.
