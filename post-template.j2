@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% include 'head.j2' %}
+    <link rel="stylesheet" href="/static/codehilite.css">
+  </head>
+  <body>
+  {% include 'header.j2' %}
+    <main>
+        <article>
+            <h1>{{ title }}</h1>
+            <span style="color: var(--text-light); font-size: 0.9em;">Published: {{ date }}</span>
+            {{ content }}
+        </article>
+    </main>
+  </body>
+  <script>
+      const allHeadings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      allHeadings.forEach((heading) => {
+        if (!heading.id) return; // Skip headings without an ID
+        const anchor = document.createElement("a");
+        anchor.href = `#${heading.id}`;
+        anchor.textContent = "#";
+        anchor.style.marginLeft = "0.5rem";
+        anchor.classList.add("anchor");
+        anchor.setAttribute("aria-hidden", "true");
+        anchor.style.textDecoration = "none";
+        // anchor.setAttribute("hidden")
+        heading.appendChild(anchor);
+      });
+
+      // convert TOC into detail/summary
+const toc = document.querySelector(".toc");
+
+  if (toc) {
+    const list = toc.querySelector(":scope > ul");
+    const topLevelItems = [...list.children].filter(
+      (element) => element.tagName === "LI"
+    );
+
+    const visibleCount = 4;
+    const visibleItems = topLevelItems.slice(0, visibleCount);
+    const hiddenItems = topLevelItems.slice(visibleCount);
+
+    if (hiddenItems.length > 0) {
+      const button = document.createElement("button");
+
+      button.type = "button";
+      button.className = "toc-toggle";
+      button.textContent = "Show all sections";
+      button.setAttribute("aria-expanded", "false");
+
+      hiddenItems.forEach((item) => {
+        item.hidden = true;
+      });
+
+      hiddenSubItems = [];
+
+      visibleItems.forEach((item) => {
+        [...item.children].forEach((child) => {
+          if (child.tagName === "UL") {
+            child.hidden = true;
+            hiddenSubItems.push(child);
+          }
+        });
+      });
+
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        hiddenSubItems.forEach((item) => {
+          item.hidden = expanded;
+        });
+        hiddenItems.forEach((item) => {
+          item.hidden = expanded;
+        });
+
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.textContent = expanded
+          ? "Show more sections"
+          : "Show fewer sections";
+      });
+
+      toc.append(button);
+    }
+  }
+    </script>
+  </body>
+  {% include 'footer.j2' %}
+</html>
